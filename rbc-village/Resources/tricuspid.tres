@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Option" load_steps=3 format=3 uid="uid://c5ekox0c56h1u"]
+
+[ext_resource type="Script" uid="uid://cjg6q0njvsg8p" path="res://Resources/tunnel_option.gd" id="1_ljcxm"]
+[ext_resource type="Texture2D" uid="uid://b00s5nnlsq6qr" path="res://Milestone1_Sprites/milestone1_icons/icon_tricuspid.jpeg" id="2_bvy1y"]
+
+[resource]
+script = ExtResource("1_ljcxm")
+name = "tricuspid"
+texture = ExtResource("2_bvy1y")
+metadata/_custom_type_script = "uid://cjg6q0njvsg8p"

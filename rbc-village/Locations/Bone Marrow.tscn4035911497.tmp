@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5j6jsyhtplyd"]
+
+[ext_resource type="Script" uid="uid://b8sg2vbv52xtv" path="res://Locations/bone_marrow.gd" id="1_2qfda"]
+[ext_resource type="PackedScene" uid="uid://diodfsp6x6uil" path="res://Prefabs/background.tscn" id="2_cwm03"]
+[ext_resource type="PackedScene" uid="uid://n2xyis25pci4" path="res://Prefabs/ui.tscn" id="4_dbpt8"]
+[ext_resource type="PackedScene" uid="uid://c0cqsmkj42df8" path="res://Prefabs/npc.tscn" id="6_5hhsq"]
+[ext_resource type="PackedScene" uid="uid://ugwl7yecskv4" path="res://text_box.tscn" id="7_dbpt8"]
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="15_3d2l3"]
+
+[node name="BoneMarrow" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_2qfda")
+
+[node name="Background" parent="." instance=ExtResource("2_cwm03")]
+
+[node name="UI" parent="." instance=ExtResource("4_dbpt8")]
+
+[node name="Back" parent="UI" index="0"]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("15_3d2l3")]
+position = Vector2(301, 480)
+
+[node name="NPCA" parent="." instance=ExtResource("6_5hhsq")]
+position = Vector2(692, 132)
+letter = "A"
+quest_available = true
+task = "Go to the Right Atrium"
+
+[node name="Text Box" parent="NPCA" instance=ExtResource("7_dbpt8")]
+visible = false
+lines = Array[String](["Hello! Are you the new Red Blood Cell here to help us?", "Please go to the Right Atrium for instructions."])
+
+[node name="NPCB" parent="." instance=ExtResource("6_5hhsq")]
+position = Vector2(1047, 292)
+letter = "B"
+quest_available = true
+
+[node name="Text Box" parent="NPCB" instance=ExtResource("7_dbpt8")]
+visible = false
+lines = Array[String](["Hello! You look different than us......"])
+
+[editable path="UI"]

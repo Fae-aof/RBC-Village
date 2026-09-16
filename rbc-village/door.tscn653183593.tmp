@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://by2lsuip0ygro"]
+
+[ext_resource type="Script" uid="uid://b3d5j8brvwxvj" path="res://door.gd" id="1_iu8q0"]
+[ext_resource type="Shader" uid="uid://vooxpo0t08wi" path="res://outline.gdshader" id="2_0phs7"]
+[ext_resource type="Texture2D" uid="uid://d06fydmokgpob" path="res://Milestone 2 Sprites/Door.png" id="2_v6xrn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0phs7"]
+shader = ExtResource("2_0phs7")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_iu8q0")
+
+[node name="Button" type="Button" parent="."]
+material = SubResource("ShaderMaterial_0phs7")
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("2_v6xrn")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

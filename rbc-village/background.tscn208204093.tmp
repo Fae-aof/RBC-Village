@@ -1,0 +1,96 @@
+[gd_scene load_steps=21 format=3 uid="uid://diodfsp6x6uil"]
+
+[ext_resource type="Texture2D" uid="uid://b203yv5clgyn4" path="res://Milestone 2 Sprites/backing.png" id="1_bho85"]
+[ext_resource type="Script" uid="uid://nnf77rvwksu2" path="res://background.gd" id="1_nk35r"]
+[ext_resource type="PackedScene" uid="uid://by2lsuip0ygro" path="res://door.tscn" id="2_nk35r"]
+[ext_resource type="Texture2D" uid="uid://b1m3aauwy7jo2" path="res://Milestone 2 Sprites/background/Backgrounds-1.png" id="3_rrgcq"]
+[ext_resource type="Texture2D" uid="uid://dmbxc617iqbxp" path="res://Milestone 2 Sprites/background/Backgrounds-2.png" id="4_bxuum"]
+[ext_resource type="Texture2D" uid="uid://dhtyrq1l8s86i" path="res://Milestone 2 Sprites/background/Backgrounds-3.png" id="5_h3jlt"]
+[ext_resource type="Texture2D" uid="uid://gwcor6v84a8n" path="res://Milestone 2 Sprites/background/Backgrounds-4.png" id="6_ultoj"]
+[ext_resource type="Texture2D" uid="uid://2l3cckqb3sdg" path="res://Milestone 2 Sprites/background/Backgrounds-5.png" id="7_f0kr8"]
+[ext_resource type="Texture2D" uid="uid://dnva4r3e5yflv" path="res://Milestone 2 Sprites/background/Backgrounds-6.png" id="8_u4o0g"]
+[ext_resource type="Texture2D" uid="uid://6qu4cbl1dlvx" path="res://Milestone 2 Sprites/background/Backgrounds-7.png" id="9_xnnf1"]
+[ext_resource type="Texture2D" uid="uid://by2qm3v60aeml" path="res://Milestone 2 Sprites/background/Backgrounds-8.png" id="10_miqd8"]
+[ext_resource type="Texture2D" uid="uid://cnxb7j00g57lv" path="res://Milestone 2 Sprites/background/Backgrounds-9.png" id="11_u6on5"]
+[ext_resource type="Texture2D" uid="uid://77i5uaudik22" path="res://Milestone 2 Sprites/background/Backgrounds-10.png" id="12_q322y"]
+[ext_resource type="Texture2D" uid="uid://bobf5b5v466gn" path="res://Milestone 2 Sprites/background/Backgrounds-11.png" id="13_40kve"]
+[ext_resource type="Texture2D" uid="uid://c00dw0a3bkcay" path="res://Milestone 2 Sprites/background/Backgrounds-12.png" id="14_lq323"]
+[ext_resource type="Texture2D" uid="uid://bc6qhj5y0bwkn" path="res://Milestone 2 Sprites/background/Backgrounds-13.png" id="15_dffhl"]
+[ext_resource type="Texture2D" uid="uid://dde0kg78ec0x0" path="res://Milestone 2 Sprites/background/Backgrounds-14.png" id="16_wc5e3"]
+[ext_resource type="Texture2D" uid="uid://byiddkst3xmyq" path="res://Milestone 2 Sprites/background/Backgrounds-15.png" id="17_0vdng"]
+[ext_resource type="Texture2D" uid="uid://dlhwqhtj2vhs0" path="res://Milestone 2 Sprites/background/Backgrounds-16.png" id="18_tod30"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uli70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rrgcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bxuum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h3jlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ultoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f0kr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u4o0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xnnf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_miqd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u6on5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q322y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_40kve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lq323")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dffhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wc5e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0vdng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tod30")
+}],
+"loop": true,
+"name": &"rippling",
+"speed": 5.0
+}]
+
+[node name="Background" type="Node2D"]
+
+[node name="RoomBackground" type="Sprite2D" parent="."]
+centered = false
+script = ExtResource("1_nk35r")
+
+[node name="Sprite2D" type="Sprite2D" parent="RoomBackground"]
+position = Vector2(640.1272, 121.99999)
+scale = Vector2(1, 0.38055554)
+texture = ExtResource("1_bho85")
+
+[node name="Door" parent="RoomBackground" instance=ExtResource("2_nk35r")]
+position = Vector2(195, -8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RoomBackground"]
+sprite_frames = SubResource("SpriteFrames_uli70")
+animation = &"rippling"
+centered = false

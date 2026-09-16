@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://oyu8pru4chrj"]
+
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="1_7b4bv"]
+[ext_resource type="Script" uid="uid://c5h8yv3ixkd3l" path="res://Scripts/player_stream.gd" id="2_xxh6u"]
+
+[node name="Oxygen Gathering" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_7b4bv")]
+position = Vector2(217, 270)
+rotation = 1.5707964
+script = ExtResource("2_xxh6u")

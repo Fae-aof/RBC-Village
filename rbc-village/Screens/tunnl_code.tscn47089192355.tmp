@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwpi1t3rx4fb"]
+
+[ext_resource type="Script" uid="uid://dq4qucu3llwtj" path="res://Scripts/tunnl_code.gd" id="1_l3lpo"]
+[ext_resource type="Texture2D" uid="uid://b203yv5clgyn4" path="res://Milestone 2 Sprites/backing.png" id="2_l3lpo"]
+[ext_resource type="Texture2D" uid="uid://hsfv5sd4wyrt" path="res://Milestone 2 Sprites/border/Border (1).png" id="3_xkjk5"]
+[ext_resource type="Texture2D" uid="uid://c68ovdstsada5" path="res://Milestone 2 Sprites/border/Border (2).png" id="4_1gbfq"]
+[ext_resource type="Texture2D" uid="uid://ciwvdoep3w8ms" path="res://Milestone 2 Sprites/border/Border (3).png" id="5_f4a05"]
+[ext_resource type="Texture2D" uid="uid://dogviu03im5jw" path="res://Milestone 2 Sprites/border/Border (4).png" id="6_brqie"]
+[ext_resource type="Texture2D" uid="uid://c5pqgi1xh1ex8" path="res://Milestone 2 Sprites/border/Border (5).png" id="7_m0gfv"]
+[ext_resource type="Texture2D" uid="uid://c8fvkp0oimlwm" path="res://Milestone 2 Sprites/border/Border (6).png" id="8_qmhdk"]
+[ext_resource type="Texture2D" uid="uid://ckipku2r5drcy" path="res://Milestone 2 Sprites/border/Border (7).png" id="9_lgpvi"]
+[ext_resource type="PackedScene" uid="uid://bvvt8yy7kowcy" path="res://Prefabs/Button.tscn" id="10_wyc5g"]
+[ext_resource type="Texture2D" uid="uid://bdkm3p8234d0p" path="res://Milestone 2 Sprites/tunnel_code_ui/Back.PNG" id="11_u7kgv"]
+[ext_resource type="PackedScene" uid="uid://c7i3dc0sj6bs8" path="res://Prefabs/inputed_code.tscn" id="12_1siru"]
+[ext_resource type="Texture2D" uid="uid://bu5pkn1elqlf7" path="res://Milestone 2 Sprites/tunnel_code_ui/Enter.PNG" id="13_ba0ky"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev8pp"]
+animations = [{
+"frames": [{
+"duration": 0.51,
+"texture": ExtResource("3_xkjk5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("7_m0gfv")
+}, {
+"duration": 0.51,
+"texture": ExtResource("4_1gbfq")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_f4a05")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_brqie")
+}, {
+"duration": 0.51,
+"texture": ExtResource("8_qmhdk")
+}, {
+"duration": 0.51,
+"texture": ExtResource("9_lgpvi")
+}],
+"loop": true,
+"name": &"border",
+"speed": 5.0
+}]
+
+[node name="TunnlCode" type="Node2D"]
+script = ExtResource("1_l3lpo")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(6, 0)
+texture = ExtResource("2_l3lpo")
+centered = false
+
+[node name="Border" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ev8pp")
+animation = &"border"
+frame_progress = 0.23558357
+centered = false
+
+[node name="Back" type="Button" parent="."]
+offset_left = 981.0
+offset_top = 399.0
+offset_right = 1160.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0.39215687, 0.06666667, 0.08627451, 1)
+theme_override_colors/font_hover_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+theme_override_font_sizes/font_size = 20
+text = "Back"
+icon = ExtResource("11_u7kgv")
+flat = true
+icon_alignment = 1
+
+[node name="InputedCode" parent="." instance=ExtResource("12_1siru")]
+position = Vector2(101, 454)
+
+[node name="Confirm" type="Button" parent="."]
+offset_left = 982.0
+offset_top = 521.0
+offset_right = 1161.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(0.39215687, 0.06666667, 0.08627451, 1)
+theme_override_colors/font_hover_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+theme_override_font_sizes/font_size = 20
+text = "Confirm"
+icon = ExtResource("13_ba0ky")
+flat = true
+icon_alignment = 1
+
+[node name="Response" type="Label" parent="."]
+offset_left = 111.0
+offset_top = 593.0
+offset_right = 659.0
+offset_bottom = 657.0
+theme_override_colors/font_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 350
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 215
+theme_override_constants/v_separation = 140
+columns = 5
+
+[node name="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" instance=ExtResource("10_wyc5g")]
+layout_mode = 2
+
+[node name="Button2" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" instance=ExtResource("10_wyc5g")]
+layout_mode = 2
+
+[node name="Button3" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" instance=ExtResource("10_wyc5g")]
+layout_mode = 2
+
+[node name="Button4" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" instance=ExtResource("10_wyc5g")]
+layout_mode = 2
+
+[node name="Button5" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" instance=ExtResource("10_wyc5g")]
+layout_mode = 2
+
+[node name="Button6" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" instance=ExtResource("10_wyc5g")]
+layout_mode = 2
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+
+[editable path="InputedCode"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Option" load_steps=3 format=3 uid="uid://d2c2g6oe4q2v7"]
+
+[ext_resource type="Script" uid="uid://cjg6q0njvsg8p" path="res://Resources/tunnel_option.gd" id="1_7l4rr"]
+[ext_resource type="Texture2D" uid="uid://c5unntsdnhqkn" path="res://Milestone1_Sprites/milestone1_icons/icon_left_atrium.jpeg" id="2_x7fut"]
+
+[resource]
+script = ExtResource("1_7l4rr")
+name = "left atrium"
+texture = ExtResource("2_x7fut")
+metadata/_custom_type_script = "uid://cjg6q0njvsg8p"

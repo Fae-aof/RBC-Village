@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmatufs8p4v12"]
+
+[ext_resource type="Script" uid="uid://c63bflys6v32q" path="res://Locations/right_atrium.gd" id="1_0lgyh"]
+[ext_resource type="PackedScene" uid="uid://diodfsp6x6uil" path="res://Prefabs/background.tscn" id="2_0lgyh"]
+[ext_resource type="PackedScene" uid="uid://c0cqsmkj42df8" path="res://Prefabs/npc.tscn" id="4_222yp"]
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="6_mwkxa"]
+[ext_resource type="PackedScene" uid="uid://ugwl7yecskv4" path="res://text_box.tscn" id="6_od8b3"]
+
+[node name="RightAtrium" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_0lgyh")
+
+[node name="Background" parent="." instance=ExtResource("2_0lgyh")]
+metadata/location = "Right Atrium"
+
+[node name="Player" parent="." instance=ExtResource("6_mwkxa")]
+position = Vector2(492, 417)
+
+[node name="NPC" parent="." instance=ExtResource("4_222yp")]
+position = Vector2(907, 114)
+letter = "C"
+quest_completer = true
+task = "Go to Right Atrium"
+
+[node name="Quest" type="Node2D" parent="NPC"]
+
+[node name="Text Box" parent="NPC" instance=ExtResource("6_od8b3")]
+lines = Array[String](["Are you the new recruit?", "Thanks for your help!", "Head to the lungs to get oxygen and deliver it to the arm."])

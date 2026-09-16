@@ -1,0 +1,145 @@
+[gd_scene load_steps=20 format=3 uid="uid://c0cqsmkj42df8"]
+
+[ext_resource type="Script" uid="uid://bdwng8u5y7lu0" path="res://Scripts/npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://c6ucyc0d5lvds" path="res://Milestone 2 Sprites/npc_animation/NPC A (1).png" id="2_bc6q4"]
+[ext_resource type="Texture2D" uid="uid://c0j7chh1381d" path="res://Milestone 2 Sprites/npc_animation/NPC A (4).png" id="3_mcvl2"]
+[ext_resource type="Texture2D" uid="uid://dy5bck3g31owd" path="res://Milestone 2 Sprites/npc_animation/NPC A (3).png" id="4_d61ma"]
+[ext_resource type="Texture2D" uid="uid://hv7xiucvbfwg" path="res://Milestone 2 Sprites/npc_animation/NPC A (2).png" id="5_slxoh"]
+[ext_resource type="Texture2D" uid="uid://bidl37i0tn0le" path="res://Milestone 2 Sprites/npc_animation/NPC B (4).png" id="6_hivs1"]
+[ext_resource type="Texture2D" uid="uid://c1310paejkwib" path="res://Milestone 2 Sprites/npc_animation/NPC B (3).png" id="7_faxwa"]
+[ext_resource type="Texture2D" uid="uid://ddqf5tbqly336" path="res://Milestone 2 Sprites/npc_animation/NPC B (2).png" id="8_bwlqr"]
+[ext_resource type="Texture2D" uid="uid://bytxp3cg1pwpd" path="res://Milestone 2 Sprites/npc_animation/NPC B (1).png" id="9_wnt0c"]
+[ext_resource type="Texture2D" uid="uid://b4l6sbtp78t06" path="res://Milestone 2 Sprites/npc_animation/NPC C (4).png" id="10_ur8k0"]
+[ext_resource type="Texture2D" uid="uid://d2lpqgwmsmoqd" path="res://Milestone 2 Sprites/npc_animation/NPC C (3).png" id="11_hlw2c"]
+[ext_resource type="Texture2D" uid="uid://tt1ucut4dlvr" path="res://Milestone 2 Sprites/npc_animation/NPC C (2).png" id="12_pvame"]
+[ext_resource type="Texture2D" uid="uid://ra5isksg2akk" path="res://Milestone 2 Sprites/npc_animation/NPC C (1).png" id="13_1mjj1"]
+[ext_resource type="Texture2D" uid="uid://dr7gggfbsskep" path="res://Milestone 2 Sprites/npc_animation/NPC D (1).png" id="14_bb20n"]
+[ext_resource type="Texture2D" uid="uid://c5b3sf0esujeh" path="res://Milestone 2 Sprites/npc_animation/NPC D (4).png" id="15_8d7p2"]
+[ext_resource type="Texture2D" uid="uid://cmnwtqdbr5kx5" path="res://Milestone 2 Sprites/npc_animation/NPC D (3).png" id="16_swplc"]
+[ext_resource type="Texture2D" uid="uid://r1tgat16rfe2" path="res://Milestone 2 Sprites/npc_animation/NPC D (2).png" id="17_ujo46"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ul7y6"]
+animations = [{
+"frames": [{
+"duration": 0.91,
+"texture": ExtResource("2_bc6q4")
+}, {
+"duration": 0.6,
+"texture": ExtResource("3_mcvl2")
+}, {
+"duration": 0.6,
+"texture": ExtResource("4_d61ma")
+}, {
+"duration": 0.6,
+"texture": ExtResource("5_slxoh")
+}, {
+"duration": 0.6,
+"texture": ExtResource("4_d61ma")
+}, {
+"duration": 0.6,
+"texture": ExtResource("3_mcvl2")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.81,
+"texture": ExtResource("6_hivs1")
+}, {
+"duration": 0.6,
+"texture": ExtResource("7_faxwa")
+}, {
+"duration": 0.6,
+"texture": ExtResource("8_bwlqr")
+}, {
+"duration": 0.6,
+"texture": ExtResource("9_wnt0c")
+}, {
+"duration": 0.6,
+"texture": ExtResource("8_bwlqr")
+}, {
+"duration": 0.6,
+"texture": ExtResource("7_faxwa")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.81,
+"texture": ExtResource("10_ur8k0")
+}, {
+"duration": 0.6,
+"texture": ExtResource("11_hlw2c")
+}, {
+"duration": 0.6,
+"texture": ExtResource("12_pvame")
+}, {
+"duration": 0.6,
+"texture": ExtResource("13_1mjj1")
+}, {
+"duration": 0.6,
+"texture": ExtResource("12_pvame")
+}, {
+"duration": 0.6,
+"texture": ExtResource("11_hlw2c")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.81,
+"texture": ExtResource("14_bb20n")
+}, {
+"duration": 0.6,
+"texture": ExtResource("15_8d7p2")
+}, {
+"duration": 0.6,
+"texture": ExtResource("16_swplc")
+}, {
+"duration": 0.6,
+"texture": ExtResource("17_ujo46")
+}, {
+"duration": 0.6,
+"texture": ExtResource("16_swplc")
+}, {
+"duration": 0.6,
+"texture": ExtResource("15_8d7p2")
+}],
+"loop": true,
+"name": &"D",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxcha"]
+radius = 170.0
+
+[node name="NPC" type="Node2D"]
+script = ExtResource("1_xxcha")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 136.0
+offset_bottom = 183.0
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ul7y6")
+animation = &"D"
+frame_progress = 0.88509214
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(123.333336, 155)
+shape = SubResource("CircleShape2D_xxcha")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

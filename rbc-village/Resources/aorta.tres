@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Option" load_steps=3 format=3 uid="uid://cptgrb33ag0qj"]
+
+[ext_resource type="Script" uid="uid://cjg6q0njvsg8p" path="res://Resources/tunnel_option.gd" id="1_3eehk"]
+[ext_resource type="Texture2D" uid="uid://b0qlxrm0ujc1n" path="res://Milestone1_Sprites/milestone1_icons/icon_aorta.jpeg" id="2_i7hoo"]
+
+[resource]
+script = ExtResource("1_3eehk")
+name = "aorta"
+texture = ExtResource("2_i7hoo")
+metadata/_custom_type_script = "uid://cjg6q0njvsg8p"

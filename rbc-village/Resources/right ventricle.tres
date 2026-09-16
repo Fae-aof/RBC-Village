@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Option" load_steps=3 format=3 uid="uid://c6j84oxksmgl4"]
+
+[ext_resource type="Script" uid="uid://cjg6q0njvsg8p" path="res://Resources/tunnel_option.gd" id="1_fb15j"]
+[ext_resource type="Texture2D" uid="uid://b7rn83brtnbe1" path="res://Milestone1_Sprites/milestone1_icons/icon_right_ventricle.jpeg" id="2_cu8fs"]
+
+[resource]
+script = ExtResource("1_fb15j")
+name = "right ventricle"
+texture = ExtResource("2_cu8fs")
+metadata/_custom_type_script = "uid://cjg6q0njvsg8p"

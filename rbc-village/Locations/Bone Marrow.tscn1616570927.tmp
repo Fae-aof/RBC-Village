@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5j6jsyhtplyd"]
+
+[ext_resource type="Script" uid="uid://b8sg2vbv52xtv" path="res://Locations/bone_marrow.gd" id="1_2qfda"]
+[ext_resource type="PackedScene" uid="uid://diodfsp6x6uil" path="res://background.tscn" id="2_cwm03"]
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://player.tscn" id="15_3d2l3"]
+[ext_resource type="Texture2D" uid="uid://bfmxwo405ir55" path="res://Milestone 2 Sprites/npcs/NPCs (1).PNG" id="21_2qfda"]
+[ext_resource type="Texture2D" uid="uid://cqxydue4w6fh5" path="res://Milestone 2 Sprites/npcs/NPCs (2).PNG" id="22_s11tw"]
+
+[node name="BoneMarrow" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_2qfda")
+
+[node name="Background" parent="." instance=ExtResource("2_cwm03")]
+
+[node name="Player" parent="." instance=ExtResource("15_3d2l3")]
+position = Vector2(301, 480)
+
+[node name="NpCs(1)" type="Sprite2D" parent="."]
+position = Vector2(778, 413)
+scale = Vector2(0.41414142, 0.41414145)
+texture = ExtResource("21_2qfda")
+
+[node name="NpCs(1)2" type="Sprite2D" parent="."]
+position = Vector2(1099, 232)
+scale = Vector2(0.40909082, 0.40909088)
+texture = ExtResource("21_2qfda")
+
+[node name="NpCs(2)" type="Sprite2D" parent="."]
+position = Vector2(147.00002, 201)
+scale = Vector2(0.5686016, 0.56860155)
+texture = ExtResource("22_s11tw")

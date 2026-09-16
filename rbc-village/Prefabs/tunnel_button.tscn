@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bkvntakggbf65"]
+
+[ext_resource type="StyleBox" uid="uid://dws8l63aarmsc" path="res://Styleboxes/Button Red.tres" id="1_bwbq1"]
+[ext_resource type="Texture2D" uid="uid://bugyittjljvwp" path="res://Milestone1_Sprites/milestone1_icons/icon_blank.jpeg" id="2_2asrm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x0ib"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Button" type="Button" unique_id=521025266]
+custom_minimum_size = Vector2(170, 110)
+offset_right = 170.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.34714013, 0.05472569, 0.07159575, 1)
+theme_override_colors/font_hover_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("1_bwbq1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0x0ib")
+theme_override_styles/hover = ExtResource("1_bwbq1")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=2061424197]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1948165937]
+position = Vector2(59.000004, 10.999999)
+scale = Vector2(0.42187497, 0.43269232)
+texture = ExtResource("2_2asrm")
+centered = false

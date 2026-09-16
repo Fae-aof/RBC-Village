@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://oyu8pru4chrj"]
+
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="1_7b4bv"]
+[ext_resource type="Script" uid="uid://b4qvp6pn5ky63" path="res://oxygen_gathering.gd" id="1_7euc0"]
+[ext_resource type="Script" uid="uid://c5h8yv3ixkd3l" path="res://Scripts/player_stream.gd" id="2_xxh6u"]
+[ext_resource type="PackedScene" uid="uid://duy1b6qe4qv2e" path="res://Prefabs/oxygen_particle.tscn" id="3_2aqre"]
+[ext_resource type="Texture2D" uid="uid://c7rrp4p46yw7l" path="res://Milestone 2 Sprites/vessel back.PNG" id="5_y5v55"]
+[ext_resource type="Texture2D" uid="uid://dj6h7mrgusp5j" path="res://Milestone 2 Sprites/veseel walls.PNG" id="6_1r2vn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxh6u"]
+size = Vector2(22.5, 735)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aqre"]
+size = Vector2(1325, 20)
+
+[node name="Oxygen Gathering" type="Node2D"]
+script = ExtResource("1_7euc0")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-890, 0)
+repeat_size = Vector2(2359, 0)
+autoscroll = Vector2(-500, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("5_y5v55")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = 1
+texture = ExtResource("6_1r2vn")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("1_7b4bv")]
+position = Vector2(217, 270)
+rotation = 1.5707964
+script = ExtResource("2_xxh6u")
+
+[node name="Particle" parent="." instance=ExtResource("3_2aqre")]
+position = Vector2(811, 337)
+
+[node name="Barriers" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Barriers"]
+position = Vector2(-10.75, 352.5)
+shape = SubResource("RectangleShape2D_xxh6u")
+
+[node name="Right" type="CollisionShape2D" parent="Barriers"]
+position = Vector2(1498, 353)
+shape = SubResource("RectangleShape2D_xxh6u")
+
+[node name="Top" type="CollisionShape2D" parent="Barriers"]
+position = Vector2(641, 55)
+shape = SubResource("RectangleShape2D_2aqre")
+
+[node name="Bottom" type="CollisionShape2D" parent="Barriers"]
+position = Vector2(641, 655)
+shape = SubResource("RectangleShape2D_2aqre")
+
+[node name="Despawn" type="StaticBody2D" parent="." groups=["despawn"]]
+
+[node name="Left" type="CollisionShape2D" parent="Despawn"]
+position = Vector2(-10.75, 352.5)
+shape = SubResource("RectangleShape2D_xxh6u")
+
+[node name="Bottom" type="CollisionShape2D" parent="Despawn"]
+position = Vector2(640.5, 730)
+shape = SubResource("RectangleShape2D_2aqre")

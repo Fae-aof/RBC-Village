@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxrr3xgfu48r7"]
+
+[ext_resource type="Script" uid="uid://c61lgnabivclu" path="res://Scripts/trackers.gd" id="1_evxei"]
+
+[node name="Trackers" type="Node2D"]
+script = ExtResource("1_evxei")

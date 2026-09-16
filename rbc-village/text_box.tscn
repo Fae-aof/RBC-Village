@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://ugwl7yecskv4"]
+
+[ext_resource type="Script" uid="uid://fmqf48b8feqt" path="res://text_box.gd" id="1_k7ve7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
+bg_color = Color(0.18717611, 0.18717617, 0.18717602, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8175212, 0.81752133, 0.8175211, 1)
+
+[node name="Text Box" type="CanvasLayer"]
+script = ExtResource("1_k7ve7")
+
+[node name="Text Box Containter" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -230.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 11.9
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Text Box Panel" type="Panel" parent="Text Box Containter"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ss407")
+
+[node name="Text Container" type="MarginContainer" parent="Text Box Containter/Text Box Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Text Panel" type="Panel" parent="Text Box Containter/Text Box Panel/Text Container"]
+layout_mode = 2
+
+[node name="Hbox" type="HBoxContainer" parent="Text Box Containter/Text Box Panel/Text Container/Text Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Text Box Containter/Text Box Panel/Text Container/Text Panel/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+clip_text = true
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

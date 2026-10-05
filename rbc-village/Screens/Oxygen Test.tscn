@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://byla4qx0k51fb"]
+
+[ext_resource type="Script" uid="uid://cgrvbojnbkxn1" path="res://Scripts/oxygen_test.gd" id="1_2qbyo"]
+[ext_resource type="StyleBox" uid="uid://b5ywhsod7imp0" path="res://Styleboxes/Background stylbox.tres" id="1_aoe3i"]
+[ext_resource type="StyleBox" uid="uid://cmqe6icawhlkj" path="res://Styleboxes/quiz blocks.tres" id="2_df7nh"]
+[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/oxygen_bar.tscn" id="4_f5ur1"]
+[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/pause.tscn" id="5_f5ur1"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=972989509]
+script = ExtResource("1_2qbyo")
+
+[node name="Panel" type="Panel" parent="." unique_id=1673471458]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_aoe3i")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1947950418]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=771134861]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("2_df7nh")
+
+[node name="Label" type="Label" parent="MarginContainer/Panel" unique_id=1151975500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "What is inside the plasma?"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=1520695933]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Answer1" type="Button" parent="MarginContainer/GridContainer" unique_id=1737198210]
+custom_minimum_size = Vector2(550, 140)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_df7nh")
+text = "Option A"
+autowrap_mode = 2
+
+[node name="Answer2" type="Button" parent="MarginContainer/GridContainer" unique_id=173801647]
+custom_minimum_size = Vector2(550, 140)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_df7nh")
+text = "Option A"
+autowrap_mode = 2
+
+[node name="Answer3" type="Button" parent="MarginContainer/GridContainer" unique_id=1647912932]
+custom_minimum_size = Vector2(550, 140)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_df7nh")
+text = "Option A"
+autowrap_mode = 2
+
+[node name="Answer4" type="Button" parent="MarginContainer/GridContainer" unique_id=789532917]
+custom_minimum_size = Vector2(550, 140)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_df7nh")
+text = "Option A"
+autowrap_mode = 2
+
+[node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("4_f5ur1")]
+
+[node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_f5ur1")]

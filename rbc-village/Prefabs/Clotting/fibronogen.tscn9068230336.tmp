@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://gsa7c2d3p06i"]
+
+[ext_resource type="Script" uid="uid://bc0ylg0hgya8q" path="res://Prefabs/Clotting/fibronogen.gd" id="1_cati5"]
+[ext_resource type="Texture2D" uid="uid://grd5p2mqw5bu" path="res://Milestone 3 Sprites/Clotting/Untitled_Artwork (15).png" id="1_y86xx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(7, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(13, 58)
+
+[node name="Fibronogen" type="RigidBody2D" unique_id=1638165097]
+gravity_scale = 0.0
+script = ExtResource("1_cati5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=179748278]
+scale = Vector2(0.43, 0.5)
+texture = ExtResource("1_y86xx")
+
+[node name="Top edge" type="Area2D" parent="." unique_id=21827133]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top edge" unique_id=1340071782]
+position = Vector2(-12, -2)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="Bottom edge" type="Area2D" parent="." unique_id=1032843160]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom edge" unique_id=385290599]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924404887]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[connection signal="area_entered" from="Top edge" to="." method="_on_top_edge_area_entered"]

@@ -1,0 +1,12 @@
+~ start
+Roe: Hi!
+- Hey!
+	Roe: Nice to meet you!
+- Who are you?
+	Roe: I'm a red blood cell, just like you!
+- I'm lost...
+	Roe: Don't worry! Just go through the tunnel at the end and head on over to the Right Atrium
+	=> END
+Roe: Go through the tunnel at the end and head on over to the Right Atrium.
+$> npc1_1.start_quest()
+=> END

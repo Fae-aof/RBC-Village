@@ -2,8 +2,9 @@ extends Node2D
 #bg animation
 @onready var animation: AnimatedSprite2D = $RoomBackground/AnimatedSprite2D
 
+@export var location: String
+
 func _ready() -> void:
-	var location = get_meta("location")
 	Trackers.update_location(location)
 
 

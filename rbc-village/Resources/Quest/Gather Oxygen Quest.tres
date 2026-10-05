@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dun78dp1ptuoo"]
+
+[ext_resource type="Script" uid="uid://prtsybqmwllq" path="res://Resources/Quest/quest resource.gd" id="1_kkseb"]
+
+[resource]
+script = ExtResource("1_kkseb")
+name = "Gather oxygen"
+reward = 100
+status = "incomplete"
+metadata/_custom_type_script = "uid://prtsybqmwllq"

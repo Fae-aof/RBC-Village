@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b3x2vn4aoupiv"]
+
+[ext_resource type="Script" uid="uid://cynlvdvqc3dbd" path="res://Prefabs/Clotting/thrombokinase.gd" id="1_1sipq"]
+[ext_resource type="Texture2D" uid="uid://n6d4pb7eslok" path="res://Milestone 3 Sprites/Clotting/IMG_1539.PNG" id="2_1sipq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1sipq"]
+radius = 40.0
+height = 96.84211
+
+[node name="thrombokinase" type="RigidBody2D" unique_id=1182771523]
+mass = 0.5
+linear_damp = 10.0
+angular_damp = 1.0
+script = ExtResource("1_1sipq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=163005957]
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("2_1sipq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1208801576]
+position = Vector2(-5, 1)
+scale = Vector2(0.475, 0.475)
+shape = SubResource("CapsuleShape2D_1sipq")

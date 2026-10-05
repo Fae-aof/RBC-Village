@@ -7,29 +7,22 @@ extends Node2D
 var current_location = "Bone Marrow"
 var oxygen = 0
 var dialogue_active = false
-var quest_list = []
 
-var location = ""
-var quest_dict = {
-	"Go to Right Atrium": [0, "incomplete"],
-	"Get oxygen in Lungs": [100, "incomplete"],
-	"Transfer oxygen to Leg": [200, "incomplete"]
-}
-var current_quests =[]
-
+var list = preload("res://Resources/Quest/Level1_QuestList.tres")
+			
 func update_location(new_location):
-	location = new_location
+	current_location = new_location
 	location_label.text = new_location
+	
 
 func add_quest(quest):
-	if quest_dict[quest][1] == "incomplete":
-		current_quests.append(quest)
+	if quest.status == "incomplete":
+		quest.status = "ongoing"
 		Back.show()
-		label.text = current_quests[0]
-		quest_dict[quest][1] = "complete"
+		label.text = quest.name
+		
 	
 func finish_quest(quest):
-	if current_quests.has(quest):
-		current_quests.erase(quest)
-		oxygen += quest_dict[quest][0]
+	if quest.status == "ongoing":
+		quest.status = "complete"
 		Back.hide()

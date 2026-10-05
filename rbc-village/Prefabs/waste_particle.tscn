@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cgtakokrfj2g0"]
+
+[ext_resource type="Script" uid="uid://dhb8ih2el8h2j" path="res://Scripts/waste_particle.gd" id="1_8bt3l"]
+[ext_resource type="Texture2D" uid="uid://crrf1yuaemeig" path="res://Milestone 3 Sprites/Capillary/IMG_1481.PNG" id="2_8bt3l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74e76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8bt3l")
+}],
+"loop": 1,
+"name": &"particle_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3kicm"]
+radius = 26.476404
+
+[node name="Particle" type="Area2D" unique_id=1118541154]
+script = ExtResource("1_8bt3l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1872409779]
+position = Vector2(0, 4)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_74e76")
+animation = &"particle_animation"
+frame_progress = 0.9064458
+
+[node name="Button" type="Button" parent="." unique_id=967752144]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -23.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=236491663 groups=["oxygen_particle"]]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_3kicm")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://oyu8pru4chrj"]
+
+[ext_resource type="Script" uid="uid://b4qvp6pn5ky63" path="res://oxygen_gathering.gd" id="1_38vck"]
+[ext_resource type="Texture2D" uid="uid://dv3dld0lv15iv" path="res://Milestone 3 Sprites/Capillary/IMG_1483.PNG" id="2_vavau"]
+[ext_resource type="Script" uid="uid://bda7c0yktua5x" path="res://cell_spawner.gd" id="3_w5cxu"]
+[ext_resource type="PackedScene" uid="uid://b6cmmw0540aux" path="res://Prefabs/food_particle.tscn" id="4_j0gqw"]
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="5_d8877"]
+[ext_resource type="Script" uid="uid://c5h8yv3ixkd3l" path="res://Scripts/player_stream.gd" id="6_b80o1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxh6u"]
+size = Vector2(22.5, 735)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aqre"]
+size = Vector2(1325, 20)
+
+[node name="Capillaries" type="Node2D" unique_id=1647841242]
+script = ExtResource("1_38vck")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1593489084]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-170, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1347468239]
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("2_vavau")
+centered = false
+
+[node name="Barriers" type="StaticBody2D" parent="." unique_id=1225858338]
+
+[node name="Left" type="CollisionShape2D" parent="Barriers" unique_id=1159083927]
+position = Vector2(-10.75, 352.5)
+shape = SubResource("RectangleShape2D_xxh6u")
+
+[node name="Right" type="CollisionShape2D" parent="Barriers" unique_id=1244917076]
+position = Vector2(1291, 353)
+shape = SubResource("RectangleShape2D_xxh6u")
+
+[node name="Top" type="CollisionShape2D" parent="Barriers" unique_id=491251571]
+position = Vector2(641, 293)
+shape = SubResource("RectangleShape2D_2aqre")
+
+[node name="Bottom" type="CollisionShape2D" parent="Barriers" unique_id=193269061]
+position = Vector2(641, 476)
+shape = SubResource("RectangleShape2D_2aqre")
+
+[node name="cell spawner" type="Node2D" parent="." unique_id=1286878248]
+position = Vector2(1219, 189)
+script = ExtResource("3_w5cxu")
+
+[node name="cell spawner2" type="Node2D" parent="." unique_id=1903388887]
+position = Vector2(1219, 564)
+script = ExtResource("3_w5cxu")
+
+[node name="Particle" parent="." unique_id=1118541154 instance=ExtResource("4_j0gqw")]
+position = Vector2(94, 360)
+
+[node name="Particle2" parent="." unique_id=1982529426 instance=ExtResource("4_j0gqw")]
+position = Vector2(231, 414)
+
+[node name="Particle3" parent="." unique_id=867724234 instance=ExtResource("4_j0gqw")]
+position = Vector2(364, 330)
+
+[node name="Particle4" parent="." unique_id=1085473267 instance=ExtResource("4_j0gqw")]
+position = Vector2(957, 389)
+
+[node name="Particle5" parent="." unique_id=1613596169 instance=ExtResource("4_j0gqw")]
+position = Vector2(872, 336)
+
+[node name="Particle6" parent="." unique_id=390943096 instance=ExtResource("4_j0gqw")]
+position = Vector2(1136, 366)
+
+[node name="Player" parent="." unique_id=52769647 instance=ExtResource("5_d8877")]
+position = Vector2(645, 364.99997)
+script = ExtResource("6_b80o1")
+
+[node name="AnimatedSprite2D" parent="Player" index="0" unique_id=1414055418]
+position = Vector2(0, 11.320792)
+rotation = 1.5707964
+scale = Vector2(0.24, 0.24)
+
+[editable path="Player"]

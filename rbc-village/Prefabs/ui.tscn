@@ -2,18 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b8jwfsy2upu5v" path="res://UI.gd" id="1_fyqef"]
 [ext_resource type="StyleBox" uid="uid://dws8l63aarmsc" path="res://Styleboxes/Button Red.tres" id="2_cuqte"]
-[ext_resource type="Texture2D" uid="uid://cka2orip7u444" path="res://Milestone 3 Sprites/Untitled_Artwork (6).png" id="3_4utcv"]
-[ext_resource type="StyleBox" uid="uid://cxcqxavxvu8a1" path="res://Styleboxes/blank bar.tres" id="3_x2se0"]
+[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/oxygen_bar.tscn" id="3_x2se0"]
 [ext_resource type="StyleBox" uid="uid://dp2nrm8r5mhn7" path="res://Styleboxes/Interaction Circle.tres" id="5_xd705"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd705"]
-bg_color = Color(0.79607844, 0.93333334, 1, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_bottom = 6
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_bottom_left = 10
+[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/pause.tscn" id="5_ykg4x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykg4x"]
 bg_color = Color(0.99999696, 0.50947034, 0.5521878, 1)
@@ -31,10 +22,10 @@ corner_radius_bottom_left = 100
 script = ExtResource("1_fyqef")
 
 [node name="Back" type="PanelContainer" parent="." unique_id=1968118254]
-offset_left = 21.0
-offset_top = 89.0
-offset_right = 285.0
-offset_bottom = 189.0
+offset_left = 23.0
+offset_top = 114.0
+offset_right = 287.0
+offset_bottom = 214.0
 theme_override_styles/panel = ExtResource("2_cuqte")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Back" unique_id=1349021896]
@@ -53,30 +44,17 @@ theme_override_colors/font_color = Color(0.39215687, 0.06666667, 0.08627451, 1)
 theme_override_font_sizes/font_size = 24
 text = "Quest"
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=516442092]
-offset_left = 73.0
-offset_top = 21.0
-offset_right = 449.0
-offset_bottom = 65.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/background = ExtResource("3_x2se0")
-theme_override_styles/fill = SubResource("StyleBoxFlat_xd705")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=307945649]
-position = Vector2(15, 6)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_4utcv")
-centered = false
+[node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("3_x2se0")]
 
 [node name="Panel" type="Panel" parent="." unique_id=1282620146]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -315.0
-offset_top = 21.0
-offset_right = -19.0
-offset_bottom = 95.0
+offset_left = -425.0
+offset_top = 16.0
+offset_right = -129.0
+offset_bottom = 90.0
 grow_horizontal = 0
 theme_override_styles/panel = ExtResource("2_cuqte")
 
@@ -92,7 +70,7 @@ theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1341733515]
+[node name="Interact" type="Button" parent="." unique_id=1341733515]
 visible = false
 anchors_preset = 3
 anchor_left = 1.0
@@ -111,4 +89,6 @@ theme_override_styles/pressed = ExtResource("5_xd705")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ykg4x")
 text = "Interact"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Pause" parent="." unique_id=338802421 instance=ExtResource("5_ykg4x")]
+
+[connection signal="pressed" from="Interact" to="." method="_on_button_pressed"]

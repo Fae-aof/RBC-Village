@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bhjfi5x38jiva"
+path="res://.godot/imported/Level 1_NPC3.dialogue-e776574d3c83f297f7a1b9e4e19a2f4e.tres"
+
+[deps]
+
+source_file="res://Level 1_NPC3.dialogue"
+dest_files=["res://.godot/imported/Level 1_NPC3.dialogue-e776574d3c83f297f7a1b9e4e19a2f4e.tres"]
+
+[params]
+
+defaults=true

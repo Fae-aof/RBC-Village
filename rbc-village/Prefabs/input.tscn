@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dutfgcfqnrjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.97881764, 0.97881764, 0.97881764, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.6748146, 0.6748147, 0.67481434, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Input0" type="Panel" unique_id=395526134]
+custom_minimum_size = Vector2(180, 130)
+offset_right = 180.0
+offset_bottom = 136.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1310468405]
+position = Vector2(5, 14.000001)
+scale = Vector2(0.7416667, 0.7416667)
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=606319267]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+horizontal_alignment = 1
+vertical_alignment = 2

@@ -14,7 +14,6 @@ size = Vector2(183.75, 706)
 
 [node name="Background" type="Node2D" unique_id=12332521]
 script = ExtResource("1_nk35r")
-metadata/location = "Bone"
 
 [node name="RoomBackground" type="Sprite2D" parent="." unique_id=426718808]
 scale = Vector2(0.667, 0.667)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Question" format=3 uid="uid://duks166bg1db4"]
+
+[ext_resource type="Script" uid="uid://tkcfc4j88y5u" path="res://Scripts/Resource Scripts/questions.gd" id="1_y3m2o"]
+
+[resource]
+script = ExtResource("1_y3m2o")
+question = "Type A blood can receive from which group?"
+answers = Array[String](["A and O", "AB only", "O only", "AB and B"])
+metadata/_custom_type_script = "uid://tkcfc4j88y5u"

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dtodv2vosl21g"]
+
+[ext_resource type="Script" uid="uid://d24pu0pichidq" path="res://Prefabs/Clotting/prothrombin.gd" id="1_dvb61"]
+[ext_resource type="Texture2D" uid="uid://bl1vvveuq2wi7" path="res://Milestone 3 Sprites/Clotting/IMG_1538.PNG" id="2_dvb61"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y8bb4"]
+friction = 0.0
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb3tv"]
+radius = 18.0
+height = 62.0
+
+[node name="prothrombin" type="RigidBody2D" unique_id=876223845 groups=["prothrombin"]]
+mass = 12.0
+physics_material_override = SubResource("PhysicsMaterial_y8bb4")
+gravity_scale = 0.0
+linear_damp = 0.8
+script = ExtResource("1_dvb61")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=474565546]
+position = Vector2(3, 0)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("2_dvb61")
+offset = Vector2(-30.769232, -1.7094017)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254048168]
+position = Vector2(4, 1)
+shape = SubResource("CapsuleShape2D_fb3tv")

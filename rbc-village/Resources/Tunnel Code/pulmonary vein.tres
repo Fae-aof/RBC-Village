@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Option" format=3 uid="uid://bu5jjdlvrm04s"]
+
+[ext_resource type="Script" uid="uid://cjg6q0njvsg8p" path="res://Scripts/tunnel_option.gd" id="1_8gra7"]
+[ext_resource type="Texture2D" uid="uid://brrh3uwju8slm" path="res://Milestone 3 Sprites/Icons/image9.png" id="2_85epo"]
+
+[resource]
+script = ExtResource("1_8gra7")
+name = "pulmonary vein"
+texture = ExtResource("2_85epo")
+metadata/_custom_type_script = "uid://cjg6q0njvsg8p"

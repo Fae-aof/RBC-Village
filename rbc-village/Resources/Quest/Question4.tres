@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Question" format=3 uid="uid://66201b130kir"]
+
+[ext_resource type="Script" uid="uid://tkcfc4j88y5u" path="res://Scripts/Resource Scripts/questions.gd" id="1_5md1o"]
+
+[resource]
+script = ExtResource("1_5md1o")
+question = "What do lymphocytes do?"
+answers = Array[String](["Produce anitbodies", "Ingest foreign particles", "Form blood clots", "Transport excretory minerals"])
+metadata/_custom_type_script = "uid://tkcfc4j88y5u"

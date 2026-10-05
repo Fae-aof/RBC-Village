@@ -2,14 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://diodfsp6x6uil" path="res://Prefabs/background.tscn" id="2_cwm03"]
 [ext_resource type="PackedScene" uid="uid://n2xyis25pci4" path="res://Prefabs/ui.tscn" id="4_dbpt8"]
+[ext_resource type="Resource" uid="uid://d3q2a4xsdo7m7" path="res://Level 1_NPC1.dialogue" id="5_cwm03"]
+[ext_resource type="Resource" uid="uid://byb5d2b720it6" path="res://Resources/Quest/Right Atrium Quest.tres" id="5_dbpt8"]
 [ext_resource type="PackedScene" uid="uid://c0cqsmkj42df8" path="res://Prefabs/npc.tscn" id="6_5hhsq"]
-[ext_resource type="PackedScene" uid="uid://ugwl7yecskv4" path="res://text_box.tscn" id="7_dbpt8"]
+[ext_resource type="Resource" uid="uid://bxe6ttcnrbakl" path="res://Level 1_NPC2.dialogue" id="6_dbpt8"]
+[ext_resource type="Script" uid="uid://cd3222nx3y3k5" path="res://addons/dialogue_manager/nodes/context/dialogue_state_context.gd" id="7_b1h4n"]
 [ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="15_3d2l3"]
 
 [node name="BoneMarrow" type="Node2D" unique_id=2048700072]
 y_sort_enabled = true
 
 [node name="Background" parent="." unique_id=1053957777 instance=ExtResource("2_cwm03")]
+location = "Bone Marrow"
 metadata/location = "Bone Marrow"
 
 [node name="UI" parent="." unique_id=1462607380 instance=ExtResource("4_dbpt8")]
@@ -20,19 +24,18 @@ position = Vector2(301, 480)
 [node name="NPCA" parent="." unique_id=904798286 instance=ExtResource("6_5hhsq")]
 position = Vector2(692, 132)
 letter = "A"
-quest_available = true
-task = "Go to Right Atrium"
+task = ExtResource("5_dbpt8")
+metadata/DialogueRes = ExtResource("5_cwm03")
 
-[node name="Text Box" parent="NPCA" unique_id=1300281027 instance=ExtResource("7_dbpt8")]
-visible = false
-lines = Array[String](["Hello! Are you the new Red Blood Cell here to help us?", "Please go to the Right Atrium for instructions."])
+[node name="DialogueStateContext" type="Node" parent="NPCA" unique_id=674035523 node_paths=PackedStringArray("target")]
+script = ExtResource("7_b1h4n")
+alias = "npc1_1"
+target = NodePath("..")
+metadata/_custom_type_script = "uid://cd3222nx3y3k5"
 
 [node name="NPCB" parent="." unique_id=1352873519 instance=ExtResource("6_5hhsq")]
 position = Vector2(1047, 292)
 letter = "B"
-
-[node name="Text Box" parent="NPCB" unique_id=1853445343 instance=ExtResource("7_dbpt8")]
-visible = false
-lines = Array[String](["Hello! You look different than us......"])
+metadata/DialogueRes = ExtResource("6_dbpt8")
 
 [editable path="UI"]

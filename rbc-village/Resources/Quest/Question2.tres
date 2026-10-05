@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Question" format=3 uid="uid://dhwyakpa5l0c5"]
+
+[ext_resource type="Script" uid="uid://tkcfc4j88y5u" path="res://Scripts/Resource Scripts/questions.gd" id="1_63hv2"]
+
+[resource]
+script = ExtResource("1_63hv2")
+question = "Where are red blood cells destroyed"
+answers = Array[String](["liver", "heart", "pancreas", "small intestine"])
+metadata/_custom_type_script = "uid://tkcfc4j88y5u"

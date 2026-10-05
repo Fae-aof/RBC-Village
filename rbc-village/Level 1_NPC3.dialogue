@@ -1,0 +1,5 @@
+~ start
+Boss Blob: Alright newbie, here's your assignment.
+Boss Blob: Head on to the lungs and get oxygen, then deliver it to the arm.
+$> npc1_2.start_quest()
+=> END

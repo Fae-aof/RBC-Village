@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-@onready var options_res = preload("res://Resources/option_list.tres")
-@onready var grid: GridContainer = $CanvasLayer/MarginContainer/PanelContainer/GridContainer
+@onready var options_res = preload("res://Resources/Tunnel Code/option_list.tres")
+@onready var grid: GridContainer = $MarginContainer/PanelContainer/Grid
 
 var inputs = []
 var current_input = 0
 var answer_key = {"To Right Atrium" : ["Bone Marrow", "vena cava", "right atrium"],
-				  "To Lungs" : ["right_atrium", "tricuspid", "right ventricle", "pulmonary artery"],
-				  "To Body Parts" : ["lungs", "pulmonary_vein", "left_atrium", "bicuspid", "left_ventricle", "aorta"]}
+				  "To Lungs" : ["Right Atrium", "tricuspid", "right ventricle", "pulmonary artery"],
+				  "To Body Parts" : ["Lungs", "pulmonary vein", "left atrium", "bicuspid", "left ventricle", "aorta"]}
 
 func _ready() -> void:
 	var options = options_res.list
@@ -37,13 +37,15 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	if current_input < 6:
+	if current_input < 5:
 		var part = get_viewport().gui_get_focus_owner()
 		var resource = part.get_meta("resource")
 		var selectedInput = "Input" + str(current_input)
 		var input_instance = get_node("InputedCode")
-		var input_node = input_instance.get_node(selectedInput)
-		input_node.texture = resource.texture
+		var sprite_node = input_instance.get_node("HBoxContainer").get_node(selectedInput).get_node("Sprite")
+		var label_node = input_instance.get_node("HBoxContainer").get_node(selectedInput).get_node("Label")
+		sprite_node.texture = resource.texture
+		label_node.text = resource.name
 		inputs.append(resource.name)
 		current_input += 1
 		
@@ -52,12 +54,16 @@ func _on_button_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	inputs.push_front(Trackers.current_location)
+	print(inputs)
 	if inputs == answer_key["To Right Atrium"]:
+		Trackers.finish_quest(load("res://Resources/Quest/Right Atrium Quest.tres"))
 		get_tree().change_scene_to_file("res://Locations/Right Atrium.tscn")
 	if inputs == answer_key["To Lungs"]:
-		get_tree().change_scene_to_file("res://oxygen_gathering.tscn")
-	else:
-		get_node("Response").text = "Invalid code inputted."
+		get_tree().change_scene_to_file("res://Screens/Oxygen Test.tscn")
+	if inputs == answer_key["To Body Parts"]:
+		get_tree().change_scene_to_file("res://Capillaries.tscn")
+	#else:
+		#get_node("Response").text = "Invalid code inputted."
 	inputs.remove_at(0)
 
 
@@ -68,7 +74,9 @@ func _on_back_pressed() -> void:
 		inputs.remove_at(-1)
 		var selectedInput = "Input" + str(current_input - 1)
 		var input_instance = get_node("InputedCode")
-		var input_node = input_instance.get_node(selectedInput)
-		input_node.texture = load("res://Milestone1_Sprites/milestone1_icons/icon_blank.jpeg")
+		var sprite_node = input_instance.get_node("HBoxContainer").get_node(selectedInput).get_node("Sprite")
+		var label_node = input_instance.get_node("HBoxContainer").get_node(selectedInput).get_node("Label")
+		sprite_node.texture = null
+		label_node.text = ""
 		current_input -= 1
 		print(str(current_input) + " is the current box and code is " + str(inputs))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0cqsmkj42df8"]
+[gd_scene format=3 uid="uid://c0cqsmkj42df8"]
 
 [ext_resource type="Script" uid="uid://bdwng8u5y7lu0" path="res://Scripts/npc.gd" id="1_xxcha"]
 [ext_resource type="Texture2D" uid="uid://c6ucyc0d5lvds" path="res://Milestone 2 Sprites/npc_animation/NPC A (1).png" id="2_bc6q4"]
@@ -39,7 +39,7 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("3_mcvl2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"A",
 "speed": 5.0
 }, {
@@ -62,7 +62,7 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("7_faxwa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"B",
 "speed": 5.0
 }, {
@@ -85,7 +85,7 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("11_hlw2c")
 }],
-"loop": true,
+"loop": 1,
 "name": &"C",
 "speed": 5.0
 }, {
@@ -108,7 +108,7 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("15_8d7p2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"D",
 "speed": 5.0
 }]
@@ -116,27 +116,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxcha"]
 radius = 170.0
 
-[node name="NPC" type="Node2D"]
+[node name="NPC" type="Node2D" unique_id=1762507885]
 script = ExtResource("1_xxcha")
+metadata/DialogueRes = null
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=2141684566]
 offset_left = 16.0
 offset_top = 23.0
 offset_right = 136.0
 offset_bottom = 183.0
 flat = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=743713301]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ul7y6")
 animation = &"D"
 frame_progress = 0.88509214
 centered = false
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=140631096]
 scale = Vector2(0.6, 0.6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=117229040]
 position = Vector2(123.333336, 155)
 shape = SubResource("CircleShape2D_xxcha")
 

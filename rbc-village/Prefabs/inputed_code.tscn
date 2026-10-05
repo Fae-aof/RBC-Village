@@ -1,97 +1,59 @@
 [gd_scene format=3 uid="uid://c7i3dc0sj6bs8"]
 
-[ext_resource type="Texture2D" uid="uid://bugyittjljvwp" path="res://Milestone1_Sprites/milestone1_icons/icon_blank.jpeg" id="1_yanp2"]
-[ext_resource type="StyleBox" uid="uid://bg54uq1it45wf" path="res://Resources/red box.tres" id="2_ivnr6"]
+[ext_resource type="PackedScene" uid="uid://dutfgcfqnrjp" path="res://Prefabs/input.tscn" id="1_3cl21"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
-bg_color = Color(0.97881764, 0.97881764, 0.97881764, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.6748146, 0.6748147, 0.67481434, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tuji"]
+bg_color = Color(0.97856885, 0.79127085, 0.7819173, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.51519644, 0.1354182, 0.14647433, 1)
 
-[node name="InputedCode" type="CanvasLayer" unique_id=1304875200]
-
-[node name="Input0" type="Sprite2D" parent="." unique_id=727811354]
-position = Vector2(184, 525)
-texture = ExtResource("1_yanp2")
-
-[node name="Input1" type="Sprite2D" parent="." unique_id=1343665028]
-position = Vector2(333, 525)
-texture = ExtResource("1_yanp2")
-
-[node name="Input2" type="Sprite2D" parent="." unique_id=1166235592]
-position = Vector2(478, 525)
-texture = ExtResource("1_yanp2")
-
-[node name="Input3" type="Sprite2D" parent="." unique_id=813053686]
-position = Vector2(624, 525)
-texture = ExtResource("1_yanp2")
-
-[node name="Input4" type="Sprite2D" parent="." unique_id=1017190176]
-position = Vector2(768, 526)
-texture = ExtResource("1_yanp2")
-
-[node name="Input5" type="Sprite2D" parent="." unique_id=43805958]
-position = Vector2(911, 525)
-texture = ExtResource("1_yanp2")
+[node name="InputedCode" type="Node" unique_id=1045091493]
 
 [node name="Starting" type="Panel" parent="." unique_id=16291151]
-offset_left = 114.0
-offset_top = 395.0
-offset_right = 270.30508
-offset_bottom = 452.0
+offset_left = 62.0
+offset_top = 422.0
+offset_right = 236.00002
+offset_bottom = 482.0
 scale = Vector2(1.3563218, 1)
-theme_override_styles/panel = ExtResource("2_ivnr6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_1tuji")
 
 [node name="StartingLocation" type="Label" parent="." unique_id=747803694]
-offset_left = 127.0
-offset_top = 401.0
-offset_right = 195.0
-offset_bottom = 441.0
+offset_left = 75.0
+offset_top = 430.0
+offset_right = 143.0
+offset_bottom = 470.0
 theme_override_colors/font_color = Color(0.39171818, 0.06688901, 0.08562915, 1)
 theme_override_font_sizes/font_size = 29
 text = "Start"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=446736604]
-visible = false
-offset_left = 120.0
-offset_top = 462.0
-offset_right = 980.0
-offset_bottom = 592.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -209.0
+offset_right = 580.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/separation = 16
 
-[node name="Panel" type="Panel" parent="HBoxContainer" unique_id=623792506]
-custom_minimum_size = Vector2(130, 130)
+[node name="Input0" parent="HBoxContainer" unique_id=395526134 instance=ExtResource("1_3cl21")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
-[node name="Panel2" type="Panel" parent="HBoxContainer" unique_id=55082570]
-custom_minimum_size = Vector2(130, 130)
+[node name="Input1" parent="HBoxContainer" unique_id=1102250674 instance=ExtResource("1_3cl21")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
-[node name="Panel3" type="Panel" parent="HBoxContainer" unique_id=848367560]
-custom_minimum_size = Vector2(130, 130)
+[node name="Input2" parent="HBoxContainer" unique_id=159077617 instance=ExtResource("1_3cl21")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
-[node name="Panel4" type="Panel" parent="HBoxContainer" unique_id=185410131]
-custom_minimum_size = Vector2(130, 130)
+[node name="Input3" parent="HBoxContainer" unique_id=304601796 instance=ExtResource("1_3cl21")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
-[node name="Panel5" type="Panel" parent="HBoxContainer" unique_id=161199144]
-custom_minimum_size = Vector2(130, 130)
+[node name="Input4" parent="HBoxContainer" unique_id=178166649 instance=ExtResource("1_3cl21")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
-
-[node name="Panel6" type="Panel" parent="HBoxContainer" unique_id=229190959]
-custom_minimum_size = Vector2(130, 130)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")

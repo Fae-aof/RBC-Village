@@ -1,55 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://duy1b6qe4qv2e"]
+[gd_scene format=3 uid="uid://duy1b6qe4qv2e"]
 
 [ext_resource type="Script" uid="uid://ccirx1aagu1xn" path="res://Scripts/oxygen_particle.gd" id="1_2xc16"]
-[ext_resource type="Texture2D" uid="uid://c30mqep7lqy2r" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-1.png" id="1_kslei"]
-[ext_resource type="Texture2D" uid="uid://ctgn6ixvt3lqm" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-2.png" id="2_2xc16"]
-[ext_resource type="Texture2D" uid="uid://dfy7tvx2cm4wb" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-3.png" id="3_ka7r6"]
-[ext_resource type="Texture2D" uid="uid://bqktbxgiqi7dm" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-4.png" id="4_kr7rr"]
-[ext_resource type="Texture2D" uid="uid://de4pxcbwae08m" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-5.png" id="5_ov4hr"]
-[ext_resource type="Texture2D" uid="uid://bub4odewbgpif" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-6.png" id="6_6mo8c"]
-[ext_resource type="Texture2D" uid="uid://udqtiikf2pqr" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-7.png" id="7_j7g7w"]
-[ext_resource type="Texture2D" uid="uid://bkyyvjmsern5k" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-8.png" id="8_7bvvg"]
-[ext_resource type="Texture2D" uid="uid://dm8x3p1sl8cv1" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-9.png" id="9_ri6tn"]
-[ext_resource type="Texture2D" uid="uid://bct3iadhmyt40" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-10.png" id="10_ggl8c"]
-[ext_resource type="Texture2D" uid="uid://dbt1mbuawsgrl" path="res://Milestone 2 Sprites/oxygen_particle_animation/Oxygen_Particle-11.png" id="11_ipndr"]
+[ext_resource type="Texture2D" uid="uid://c7ib8oy6inyw0" path="res://Milestone 3 Sprites/Capillary/IMG_1492.PNG" id="2_25h8k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_74e76"]
 animations = [{
 "frames": [{
-"duration": 0.61,
-"texture": ExtResource("1_kslei")
-}, {
-"duration": 0.61,
-"texture": ExtResource("2_2xc16")
-}, {
-"duration": 0.61,
-"texture": ExtResource("3_ka7r6")
-}, {
-"duration": 0.61,
-"texture": ExtResource("4_kr7rr")
-}, {
-"duration": 0.61,
-"texture": ExtResource("5_ov4hr")
-}, {
-"duration": 0.61,
-"texture": ExtResource("6_6mo8c")
-}, {
-"duration": 0.61,
-"texture": ExtResource("7_j7g7w")
-}, {
-"duration": 0.61,
-"texture": ExtResource("8_7bvvg")
-}, {
-"duration": 0.61,
-"texture": ExtResource("9_ri6tn")
-}, {
-"duration": 0.61,
-"texture": ExtResource("10_ggl8c")
-}, {
-"duration": 0.61,
-"texture": ExtResource("11_ipndr")
+"duration": 1.0,
+"texture": ExtResource("2_25h8k")
 }],
-"loop": true,
+"loop": 1,
 "name": &"particle_animation",
 "speed": 5.0
 }]
@@ -57,19 +17,24 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kicm"]
 radius = 26.476404
 
-[node name="Particle" type="Node2D"]
+[node name="Particle" type="Area2D" unique_id=1118541154 groups=["oxygen_particle"]]
 script = ExtResource("1_2xc16")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1872409779]
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_74e76")
 animation = &"particle_animation"
-frame_progress = 0.70793086
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Button" type="Button" parent="." unique_id=967752144]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -23.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 23.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=236491663 groups=["oxygen_particle"]]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_3kicm")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Question" format=3 uid="uid://c5hocx01uv467"]
+
+[ext_resource type="Script" uid="uid://tkcfc4j88y5u" path="res://Scripts/Resource Scripts/questions.gd" id="1_8hl2u"]
+
+[resource]
+script = ExtResource("1_8hl2u")
+question = "What does NOT describe a red blood cell?"
+answers = Array[String](["rough", "flat", "circular", "biconcave"])
+metadata/_custom_type_script = "uid://tkcfc4j88y5u"

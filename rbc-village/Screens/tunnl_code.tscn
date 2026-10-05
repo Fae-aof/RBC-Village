@@ -1,22 +1,13 @@
 [gd_scene format=3 uid="uid://bwpi1t3rx4fb"]
 
 [ext_resource type="Script" uid="uid://dq4qucu3llwtj" path="res://Scripts/tunnl_code.gd" id="1_l3lpo"]
+[ext_resource type="StyleBox" uid="uid://b5ywhsod7imp0" path="res://Styleboxes/Background stylbox.tres" id="2_skb2f"]
+[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/oxygen_bar.tscn" id="7_cq7go"]
+[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/pause.tscn" id="8_luoul"]
 [ext_resource type="Texture2D" uid="uid://bdkm3p8234d0p" path="res://Milestone 2 Sprites/tunnel_code_ui/Back.PNG" id="11_u7kgv"]
 [ext_resource type="PackedScene" uid="uid://c7i3dc0sj6bs8" path="res://Prefabs/inputed_code.tscn" id="12_1siru"]
 [ext_resource type="Texture2D" uid="uid://bu5pkn1elqlf7" path="res://Milestone 2 Sprites/tunnel_code_ui/Enter.PNG" id="13_ba0ky"]
 [ext_resource type="PackedScene" uid="uid://bkvntakggbf65" path="res://Prefabs/tunnel_button.tscn" id="13_l3lpo"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
-bg_color = Color(0.8038649, 0.4937595, 0.46081144, 1)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.40501246, 0.1269188, 0.1335102, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3lpo"]
 
@@ -29,37 +20,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+theme_override_styles/panel = ExtResource("2_skb2f")
 
 [node name="Response" type="Label" parent="." unique_id=1721786249]
+visible = false
 offset_left = 111.0
 offset_top = 593.0
 offset_right = 659.0
 offset_bottom = 657.0
 theme_override_colors/font_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
 
-[node name="InputedCode" parent="." unique_id=1304875200 instance=ExtResource("12_1siru")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1514888793]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1240948336]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1240948336]
 anchors_preset = -1
 anchor_top = -0.0055555557
 anchor_bottom = -0.0055555557
 offset_right = 1280.0
 offset_bottom = 401.0
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 90
+theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 50
-metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=271550757]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=271550757]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_l3lpo")
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=600542076]
+[node name="Grid" type="GridContainer" parent="MarginContainer/PanelContainer" unique_id=600542076]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -67,51 +54,53 @@ theme_override_constants/h_separation = 49
 theme_override_constants/v_separation = 27
 columns = 5
 
-[node name="Button" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=265212152 instance=ExtResource("13_l3lpo")]
+[node name="Button" parent="MarginContainer/PanelContainer/Grid" unique_id=265212152 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button2" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=1125548448 instance=ExtResource("13_l3lpo")]
+[node name="Button2" parent="MarginContainer/PanelContainer/Grid" unique_id=1125548448 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button3" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=1380446999 instance=ExtResource("13_l3lpo")]
+[node name="Button3" parent="MarginContainer/PanelContainer/Grid" unique_id=1380446999 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button4" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=1442384739 instance=ExtResource("13_l3lpo")]
+[node name="Button4" parent="MarginContainer/PanelContainer/Grid" unique_id=1442384739 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button5" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=2034371237 instance=ExtResource("13_l3lpo")]
+[node name="Button5" parent="MarginContainer/PanelContainer/Grid" unique_id=2034371237 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button6" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=768123474 instance=ExtResource("13_l3lpo")]
+[node name="Button6" parent="MarginContainer/PanelContainer/Grid" unique_id=768123474 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button7" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=2042331059 instance=ExtResource("13_l3lpo")]
+[node name="Button7" parent="MarginContainer/PanelContainer/Grid" unique_id=2042331059 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button8" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=1611370010 instance=ExtResource("13_l3lpo")]
+[node name="Button8" parent="MarginContainer/PanelContainer/Grid" unique_id=1611370010 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button9" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=364322604 instance=ExtResource("13_l3lpo")]
+[node name="Button9" parent="MarginContainer/PanelContainer/Grid" unique_id=364322604 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Button10" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer" unique_id=48883372 instance=ExtResource("13_l3lpo")]
+[node name="Button10" parent="MarginContainer/PanelContainer/Grid" unique_id=48883372 instance=ExtResource("13_l3lpo")]
 layout_mode = 2
 size_flags_horizontal = 0
+
+[node name="InputedCode" parent="." unique_id=1304875200 instance=ExtResource("12_1siru")]
 
 [node name="Back" type="Button" parent="." unique_id=633978310]
-offset_left = 981.0
-offset_top = 399.0
-offset_right = 1160.0
-offset_bottom = 523.0
+offset_left = 1037.0
+offset_top = 420.0
+offset_right = 1216.0
+offset_bottom = 544.0
 theme_override_colors/font_color = Color(0.39215687, 0.06666667, 0.08627451, 1)
 theme_override_colors/font_hover_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
 theme_override_font_sizes/font_size = 20
@@ -121,10 +110,10 @@ flat = true
 icon_alignment = 1
 
 [node name="Confirm" type="Button" parent="." unique_id=1151468840]
-offset_left = 982.0
-offset_top = 521.0
-offset_right = 1161.0
-offset_bottom = 646.0
+offset_left = 1047.0
+offset_top = 531.0
+offset_right = 1226.0
+offset_bottom = 656.0
 theme_override_colors/font_color = Color(0.39215687, 0.06666667, 0.08627451, 1)
 theme_override_colors/font_hover_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
 theme_override_font_sizes/font_size = 20
@@ -132,6 +121,10 @@ text = "Confirm"
 icon = ExtResource("13_ba0ky")
 flat = true
 icon_alignment = 1
+
+[node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("7_cq7go")]
+
+[node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("8_luoul")]
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

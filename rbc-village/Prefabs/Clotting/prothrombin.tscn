@@ -11,8 +11,13 @@ absorbent = true
 radius = 18.0
 height = 62.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
+radius = 87.02299
+
 [node name="prothrombin" type="RigidBody2D" unique_id=876223845 groups=["prothrombin"]]
-mass = 12.0
+collision_layer = 2
+collision_mask = 3
+mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_y8bb4")
 gravity_scale = 0.0
 linear_damp = 0.8
@@ -27,3 +32,14 @@ offset = Vector2(-30.769232, -1.7094017)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254048168]
 position = Vector2(4, 1)
 shape = SubResource("CapsuleShape2D_fb3tv")
+
+[node name="Radius" type="Area2D" parent="." unique_id=1203484502]
+position = Vector2(4, 1)
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radius" unique_id=574479965]
+shape = SubResource("CircleShape2D_8vrlf")
+
+[connection signal="body_entered" from="Radius" to="." method="_on_radius_body_entered"]
+[connection signal="body_exited" from="Radius" to="." method="_on_radius_body_exited"]

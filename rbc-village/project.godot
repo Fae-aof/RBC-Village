@@ -47,6 +47,9 @@ oxygen_particle=""
 food_particle=""
 calcium=""
 prothrombin=""
+chain=""
+thrombokinase=""
+fibronogen=""
 
 [input]
 

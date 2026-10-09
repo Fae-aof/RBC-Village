@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://w4h3ycoyxq5h" path="res://Screens/clotting.gd" id="1_433b2"]
 [ext_resource type="PackedScene" uid="uid://co562tlemnjgd" path="res://Prefabs/player_platelet.tscn" id="1_ysijd"]
+[ext_resource type="PackedScene" uid="uid://c67cbcih5nqu0" path="res://Prefabs/Clotting/calcium.tscn" id="2_tn38g"]
 [ext_resource type="Script" uid="uid://cf1q72ob26bfp" path="res://Scripts/player_platelet.gd" id="2_y8bb4"]
 [ext_resource type="PackedScene" uid="uid://dtodv2vosl21g" path="res://Prefabs/Clotting/prothrombin.tscn" id="2_ysijd"]
-[ext_resource type="Script" uid="uid://ye4flqqhxfi1" path="res://Screens/calcium.gd" id="4_121i3"]
 [ext_resource type="Texture2D" uid="uid://cka2orip7u444" path="res://Milestone 3 Sprites/Untitled_Artwork (6).png" id="6_fb3tv"]
-[ext_resource type="PackedScene" uid="uid://gsa7c2d3p06i" path="res://Prefabs/Clotting/fibronogen.tscn" id="7_tn38g"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 105.23308
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cati5"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(1349, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(65, 832)
 
 [node name="Clotting" type="Node2D" unique_id=466004026]
 script = ExtResource("1_433b2")
 
-[node name="Calcium" type="Area2D" parent="." unique_id=459174839 groups=["calcium"]]
-position = Vector2(1110, 430)
-script = ExtResource("4_121i3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Calcium" unique_id=249693219]
-position = Vector2(-232, 27)
-shape = SubResource("CircleShape2D_1vivr")
+[node name="Calcium" parent="." unique_id=175715949 instance=ExtResource("2_tn38g")]
+position = Vector2(882, 453)
 
 [node name="UntitledArtwork(6)" type="Sprite2D" parent="." unique_id=998905273]
 modulate = Color(1, 1, 1, 0.5254902)
@@ -36,27 +36,23 @@ speed = 6.0
 [node name="prothrombin" parent="." unique_id=357623304 instance=ExtResource("2_ysijd")]
 position = Vector2(492, 457)
 
-[node name="Fibronogen" parent="." unique_id=494081915 instance=ExtResource("7_tn38g")]
-position = Vector2(419, 182)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1508564926]
+collision_layer = 14
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_cati5")
 
-[node name="Fibronogen2" parent="." unique_id=27635062 instance=ExtResource("7_tn38g")]
-position = Vector2(454, 276)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=285611463]
+position = Vector2(656, -36)
+shape = SubResource("RectangleShape2D_1vivr")
 
-[node name="Fibronogen3" parent="." unique_id=1300213017 instance=ExtResource("7_tn38g")]
-position = Vector2(314, 272)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1366057107]
+position = Vector2(656, 755)
+shape = SubResource("RectangleShape2D_1vivr")
 
-[node name="Fibronogen4" parent="." unique_id=609552917 instance=ExtResource("7_tn38g")]
-position = Vector2(927, 165)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=871394119]
+position = Vector2(-30, 403)
+shape = SubResource("RectangleShape2D_8vrlf")
 
-[node name="Fibronogen5" parent="." unique_id=1638165097 instance=ExtResource("7_tn38g")]
-position = Vector2(567, 260)
-
-[node name="Fibronogen6" parent="." unique_id=1489000153 instance=ExtResource("7_tn38g")]
-position = Vector2(382, 353)
-
-[node name="Fibronogen7" parent="." unique_id=418661999 instance=ExtResource("7_tn38g")]
-position = Vector2(510, 220)
-
-[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2130732679]
-
-[connection signal="body_entered" from="Calcium" to="." method="_on_calcium_body_entered"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1383557286]
+position = Vector2(1312, 403)
+shape = SubResource("RectangleShape2D_8vrlf")

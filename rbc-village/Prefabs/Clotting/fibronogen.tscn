@@ -3,49 +3,29 @@
 [ext_resource type="Script" uid="uid://bc0ylg0hgya8q" path="res://Prefabs/Clotting/fibronogen.gd" id="1_cati5"]
 [ext_resource type="Texture2D" uid="uid://grd5p2mqw5bu" path="res://Milestone 3 Sprites/Clotting/Untitled_Artwork (15).png" id="1_y86xx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
-size = Vector2(25.84375, 9.921875)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
-size = Vector2(13, 50.5)
+size = Vector2(5, 23.75)
 
-[node name="Fibronogen" type="RigidBody2D" unique_id=1638165097]
+[node name="Fibronogen" type="RigidBody2D" unique_id=1638165097 groups=["chain", "fibronogen"]]
+z_index = -1
+collision_layer = 4
+collision_mask = 4
 mass = 5.0
 gravity_scale = 0.0
 linear_damp = 0.5
 script = ExtResource("1_cati5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=179748278]
-scale = Vector2(0.43, 0.5)
+modulate = Color(1, 1, 1, 0.30588236)
+scale = Vector2(0.268, 0.305)
 texture = ExtResource("1_y86xx")
 
-[node name="Top edge" type="Area2D" parent="." unique_id=21827133]
-position = Vector2(0, -31)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top edge" unique_id=1340071782]
-shape = SubResource("RectangleShape2D_1vivr")
-
-[node name="Bottom edge" type="Area2D" parent="." unique_id=1032843160]
-position = Vector2(0, 30)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom edge" unique_id=385290599]
-shape = SubResource("RectangleShape2D_1vivr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924404887]
-position = Vector2(1, 0.25)
+position = Vector2(0.5, 0.875)
 shape = SubResource("RectangleShape2D_8vrlf")
 
-[node name="Button" type="Button" parent="." unique_id=1653423753]
-offset_left = -3.0
-offset_top = -19.0
-offset_right = 5.0
-offset_bottom = 17.0
+[node name="TopEnd" type="Marker2D" parent="." unique_id=1922994205]
+position = Vector2(0, -19)
 
-[connection signal="area_entered" from="Top edge" to="." method="_on_top_edge_area_entered"]
-[connection signal="area_exited" from="Top edge" to="." method="_on_top_edge_area_exited"]
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="BottomEnd" type="Marker2D" parent="." unique_id=541609143]
+position = Vector2(0, 18)

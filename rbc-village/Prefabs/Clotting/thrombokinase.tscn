@@ -7,8 +7,8 @@
 radius = 40.0
 height = 96.84211
 
-[node name="thrombokinase" type="RigidBody2D" unique_id=1182771523]
-mass = 0.5
+[node name="thrombokinase" type="RigidBody2D" unique_id=1182771523 groups=["thrombokinase"]]
+mass = 3.0
 linear_damp = 10.0
 angular_damp = 1.0
 script = ExtResource("1_1sipq")
@@ -17,7 +17,8 @@ script = ExtResource("1_1sipq")
 scale = Vector2(0.475, 0.475)
 texture = ExtResource("2_1sipq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1208801576]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1208801576 groups=["thrombokinase"]]
+modulate = Color(1, 1, 1, 0.3529412)
 position = Vector2(-5, 1)
 scale = Vector2(0.475, 0.475)
 shape = SubResource("CapsuleShape2D_1sipq")

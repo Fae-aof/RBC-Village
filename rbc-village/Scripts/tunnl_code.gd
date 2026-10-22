@@ -57,7 +57,7 @@ func _on_confirm_pressed() -> void:
 	print(inputs)
 	if inputs == answer_key["To Right Atrium"]:
 		Trackers.finish_quest(load("res://Resources/Quest/Right Atrium Quest.tres"))
-		get_tree().change_scene_to_file("res://Locations/Right Atrium.tscn")
+		get_tree().change_scene_to_file("res://Sections/Right Atrium.tscn")
 	if inputs == answer_key["To Lungs"]:
 		get_tree().change_scene_to_file("res://Screens/Oxygen Test.tscn")
 	if inputs == answer_key["To Body Parts"]:

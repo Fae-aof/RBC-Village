@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://b4qvp6pn5ky63" path="res://oxygen_gathering.gd" id="1_38vck"]
 [ext_resource type="Texture2D" uid="uid://dv3dld0lv15iv" path="res://Milestone 3 Sprites/Capillary/IMG_1483.PNG" id="2_vavau"]
 [ext_resource type="Script" uid="uid://bda7c0yktua5x" path="res://cell_spawner.gd" id="3_w5cxu"]
-[ext_resource type="PackedScene" uid="uid://b6cmmw0540aux" path="res://Prefabs/food_particle.tscn" id="4_j0gqw"]
+[ext_resource type="PackedScene" uid="uid://b6cmmw0540aux" path="res://Prefabs/Capillaries/food_particle.tscn" id="4_j0gqw"]
 [ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="5_d8877"]
-[ext_resource type="Script" uid="uid://c5h8yv3ixkd3l" path="res://Scripts/player_stream.gd" id="6_b80o1"]
+[ext_resource type="Script" uid="uid://c5h8yv3ixkd3l" path="res://Scripts/Capillaries/player_stream.gd" id="6_b80o1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxh6u"]
 size = Vector2(22.5, 735)

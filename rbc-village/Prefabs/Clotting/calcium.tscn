@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c67cbcih5nqu0"]
 
 [ext_resource type="Script" uid="uid://ye4flqqhxfi1" path="res://Screens/calcium.gd" id="1_ygtgu"]
+[ext_resource type="Texture2D" uid="uid://xsfcd0s5c03w" path="res://Milestone 3 Sprites/Clotting/IMG_1544.PNG" id="2_q73cb"]
+[ext_resource type="Texture2D" uid="uid://dwgjjrk2scx2d" path="res://Milestone 3 Sprites/Clotting/IMG_1543.PNG" id="3_tvaxt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 105.23308
+radius = 114.15778
 
 [node name="Calcium" type="Area2D" unique_id=175715949 groups=["calcium"]]
 collision_layer = 2
@@ -12,6 +14,15 @@ script = ExtResource("1_ygtgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=498825950]
 shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=316812829]
+modulate = Color(1, 1, 1, 0.49803922)
+z_index = -1
+texture = ExtResource("2_q73cb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=79957358]
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("3_tvaxt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

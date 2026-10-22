@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://dtodv2vosl21g"]
 
 [ext_resource type="Script" uid="uid://d24pu0pichidq" path="res://Prefabs/Clotting/prothrombin.gd" id="1_dvb61"]
-[ext_resource type="Texture2D" uid="uid://bl1vvveuq2wi7" path="res://Milestone 3 Sprites/Clotting/IMG_1538.PNG" id="2_dvb61"]
+[ext_resource type="Texture2D" uid="uid://clrmholq5qyn" path="res://Milestone 3 Sprites/better clotting sprites/prothrombin.png" id="2_dvb61"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y8bb4"]
 friction = 0.0
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb3tv"]
-radius = 18.0
-height = 62.0
+radius = 16.0
+height = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
-radius = 87.02299
+radius = 117.00427
 
 [node name="prothrombin" type="RigidBody2D" unique_id=876223845 groups=["prothrombin"]]
 collision_layer = 2
@@ -24,13 +24,14 @@ linear_damp = 0.8
 script = ExtResource("1_dvb61")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=474565546]
-position = Vector2(3, 0)
-scale = Vector2(0.585, 0.585)
+position = Vector2(26, 1)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_dvb61")
 offset = Vector2(-30.769232, -1.7094017)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254048168]
-position = Vector2(4, 1)
+position = Vector2(3, 0)
+scale = Vector2(1.2849588, 1.2849588)
 shape = SubResource("CapsuleShape2D_fb3tv")
 
 [node name="Radius" type="Area2D" parent="." unique_id=1203484502]

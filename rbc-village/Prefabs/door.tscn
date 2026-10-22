@@ -1,17 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://by2lsuip0ygro"]
+[gd_scene format=3 uid="uid://d0i878mo5yhsa"]
 
-[ext_resource type="Script" uid="uid://b3d5j8brvwxvj" path="res://Scripts/door.gd" id="1_bp8im"]
 [ext_resource type="Texture2D" uid="uid://d06fydmokgpob" path="res://Milestone 2 Sprites/Door.png" id="2_0i76c"]
+
+[sub_resource type="GDScript" id="GDScript_uqoeb"]
+script/source = "extends Node2D
+
+@onready var button = get_node(\"Button\")
+
+var player_detected = false
+
+#teleport to tunnel code scene
+func _on_button_pressed() -> void:
+	if player_detected == true:
+		get_tree().change_scene_to_file(\"res://Screens/tunnl_code.tscn\")
+
+#outlines
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group(\"player_bottom\"):
+		var shader = preload(\"res://outline.gdshader\")
+		var material = ShaderMaterial.new()
+		material.shader = shader
+		
+		button.material = material
+		player_detected = true
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group(\"player_bottom\"):
+		button.material = null
+		player_detected = false
+		
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v6xrn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6xrn"]
 radius = 135.34032
 
-[node name="Door" type="Node2D"]
-script = ExtResource("1_bp8im")
+[node name="Door" type="Node2D" unique_id=227713765]
+script = SubResource("GDScript_uqoeb")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1087095789]
 material = SubResource("ShaderMaterial_v6xrn")
 offset_right = 520.0
 offset_bottom = 520.0
@@ -20,10 +48,10 @@ icon = ExtResource("2_0i76c")
 flat = true
 icon_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=65644779]
 position = Vector2(114, 121)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=641239472]
 shape = SubResource("CircleShape2D_v6xrn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dq4qucu3llwtj" path="res://Scripts/tunnl_code.gd" id="1_l3lpo"]
 [ext_resource type="StyleBox" uid="uid://b5ywhsod7imp0" path="res://Styleboxes/Background stylbox.tres" id="2_skb2f"]
-[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/oxygen_bar.tscn" id="7_cq7go"]
-[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/pause.tscn" id="8_luoul"]
+[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="7_cq7go"]
+[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="8_luoul"]
 [ext_resource type="Texture2D" uid="uid://bdkm3p8234d0p" path="res://Milestone 2 Sprites/tunnel_code_ui/Back.PNG" id="11_u7kgv"]
 [ext_resource type="PackedScene" uid="uid://c7i3dc0sj6bs8" path="res://Prefabs/inputed_code.tscn" id="12_1siru"]
 [ext_resource type="Texture2D" uid="uid://bu5pkn1elqlf7" path="res://Milestone 2 Sprites/tunnel_code_ui/Enter.PNG" id="13_ba0ky"]

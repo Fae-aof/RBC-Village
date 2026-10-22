@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bbvqm66855pco"]
+
+[ext_resource type="Texture2D" uid="uid://boc7ic8e5phyf" path="res://Milestone1_Sprites/milestone1_assets/room_background.PNG" id="1_eqxol"]
+[ext_resource type="Texture2D" uid="uid://8yictok3m2n6" path="res://Milestone1_Sprites/milestone1_assets/npc.PNG" id="2_1nhv1"]
+[ext_resource type="Texture2D" uid="uid://ufvst1rq7xkc" path="res://Milestone1_Sprites/milestone1_assets/door.PNG" id="3_rbbc7"]
+[ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="5_rbbc7"]
+
+[sub_resource type="GDScript" id="GDScript_1nhv1"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Trackers.oxygen = 100
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Lung" type="Node2D" unique_id=217177245]
+script = SubResource("GDScript_1nhv1")
+
+[node name="RoomBackground" type="Sprite2D" parent="." unique_id=647470524]
+texture = ExtResource("1_eqxol")
+centered = false
+
+[node name="Npc" type="Sprite2D" parent="." unique_id=1981834681]
+position = Vector2(217, 269)
+texture = ExtResource("2_1nhv1")
+
+[node name="Npc2" type="Sprite2D" parent="." unique_id=180165335]
+position = Vector2(944, 188)
+texture = ExtResource("2_1nhv1")
+
+[node name="Npc3" type="Sprite2D" parent="." unique_id=2130009092]
+position = Vector2(539, 391)
+texture = ExtResource("2_1nhv1")
+
+[node name="Door" type="Sprite2D" parent="." unique_id=793397253]
+position = Vector2(609, 79)
+texture = ExtResource("3_rbbc7")
+
+[node name="Player" parent="." unique_id=1333959462 instance=ExtResource("5_rbbc7")]
+position = Vector2(763, 459)

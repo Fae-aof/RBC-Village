@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkvntakggbf65"]
 
 [ext_resource type="StyleBox" uid="uid://dws8l63aarmsc" path="res://Styleboxes/Button Red.tres" id="1_bwbq1"]
+[ext_resource type="Texture2D" uid="uid://b85agmog0gxbi" path="res://Milestone 3 Sprites/Tunnel Code/IMG_1553.PNG" id="2_bwbq1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x0ib"]
 bg_color = Color(1, 1, 1, 1)
@@ -15,7 +16,21 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_bwbq1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0x0ib")
 theme_override_styles/hover = ExtResource("1_bwbq1")
+flat = true
 icon_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=778222577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bwbq1")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
 
 [node name="Label" type="Label" parent="." unique_id=2061424197]
 layout_mode = 1
@@ -33,5 +48,5 @@ vertical_alignment = 2
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1948165937]
 position = Vector2(18, 9)
-scale = Vector2(0.667, 0.667)
+scale = Vector2(0.7, 0.7)
 centered = false

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gsa7c2d3p06i"]
 
 [ext_resource type="Script" uid="uid://bc0ylg0hgya8q" path="res://Prefabs/Clotting/fibronogen.gd" id="1_cati5"]
-[ext_resource type="Texture2D" uid="uid://grd5p2mqw5bu" path="res://Milestone 3 Sprites/Clotting/Untitled_Artwork (15).png" id="1_y86xx"]
+[ext_resource type="Texture2D" uid="uid://hx0ord2dm1ap" path="res://Milestone 3 Sprites/better clotting sprites/fibronogen.png" id="2_cati5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
 size = Vector2(5, 23.75)
@@ -14,11 +14,17 @@ mass = 5.0
 gravity_scale = 0.0
 linear_damp = 0.5
 script = ExtResource("1_cati5")
+attract_strength = null
+attract_range = null
+connect_distance = null
+max_chain_length = null
+straighten_strength = null
+drift_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=179748278]
 modulate = Color(1, 1, 1, 0.30588236)
-scale = Vector2(0.268, 0.305)
-texture = ExtResource("1_y86xx")
+scale = Vector2(0.321, 0.365)
+texture = ExtResource("2_cati5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924404887]
 position = Vector2(0.5, 0.875)

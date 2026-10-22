@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var qn_text: Label = $MarginContainer/Panel/Label
 @onready var grid: GridContainer = $MarginContainer/GridContainer
 
-var question_list = [preload("res://Resources/Quest/Question1.tres"), preload("res://Resources/Quest/Question2.tres"), preload("res://Resources/Quest/Question3.tres"), preload("res://Resources/Quest/Question4.tres")]
+var question_list = [preload("res://Resources/Question/Question1.tres"), preload("res://Resources/Question/Question2.tres"), preload("res://Resources/Question/Question3.tres"), preload("res://Resources/Question/Question4.tres")]
 
 var question_number = 0
 var answer_list 

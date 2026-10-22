@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cgrvbojnbkxn1" path="res://Scripts/oxygen_test.gd" id="1_2qbyo"]
 [ext_resource type="StyleBox" uid="uid://b5ywhsod7imp0" path="res://Styleboxes/Background stylbox.tres" id="1_aoe3i"]
 [ext_resource type="StyleBox" uid="uid://cmqe6icawhlkj" path="res://Styleboxes/quiz blocks.tres" id="2_df7nh"]
-[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/oxygen_bar.tscn" id="4_f5ur1"]
-[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/pause.tscn" id="5_f5ur1"]
+[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="4_f5ur1"]
+[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="5_f5ur1"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=972989509]
 script = ExtResource("1_2qbyo")

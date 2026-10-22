@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://d2l05am3f608q" path="res://Milestone 3 Sprites/UI/panel thin.png" id="2_nlsx6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -135,13 +136,21 @@ offset_top = -219.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=2145270309]
+[node name="PanelContainer" type="NinePatchRect" parent="Balloon/MarginContainer" unique_id=1932239305]
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
+texture = ExtResource("2_nlsx6")
+patch_margin_left = 26
+patch_margin_top = 51
+patch_margin_right = 64
+patch_margin_bottom = 83
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=903640783]
-layout_mode = 2
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1220.0
+offset_bottom = 186.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1685890612]
 layout_mode = 2

@@ -1,12 +1,12 @@
 [gd_resource type="StyleBoxFlat" format=3 uid="uid://dws8l63aarmsc"]
 
 [resource]
-bg_color = Color(0.96305436, 0.93527496, 0.9106209, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
+bg_color = Color(0.98, 0.9506, 0.9506, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.44579762, 0.081447326, 0.102540456, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10

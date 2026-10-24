@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="RBC Village"
-run/main_scene="uid://c4foacdfc1avf"
+run/main_scene="uid://bwpi1t3rx4fb"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -33,6 +33,7 @@ runtime/balloon_path="res://Balloon/balloon.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

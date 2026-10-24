@@ -13,6 +13,7 @@ border_color = Color(0.51519644, 0.1354182, 0.14647433, 1)
 [node name="InputedCode" type="Node" unique_id=1045091493]
 
 [node name="Starting" type="Panel" parent="." unique_id=16291151]
+visible = false
 offset_left = 62.0
 offset_top = 422.0
 offset_right = 236.00002
@@ -21,6 +22,7 @@ scale = Vector2(1.3563218, 1)
 theme_override_styles/panel = SubResource("StyleBoxFlat_1tuji")
 
 [node name="StartingLocation" type="Label" parent="." unique_id=747803694]
+visible = false
 offset_left = 75.0
 offset_top = 430.0
 offset_right = 143.0
@@ -41,7 +43,7 @@ offset_right = 580.0
 offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 16
+theme_override_constants/separation = 23
 
 [node name="Input0" parent="HBoxContainer" unique_id=395526134 instance=ExtResource("1_3cl21")]
 layout_mode = 2

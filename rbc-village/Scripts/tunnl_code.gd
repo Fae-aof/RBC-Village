@@ -6,7 +6,9 @@ extends CanvasLayer
 @onready var h_box: HBoxContainer = $InputHbox
 @onready var panel: Panel = $Panel
 
+@onready var normal_stylebox = preload("res://Styleboxes/Input box white.tres")
 @onready var green_stylebox = preload("res://Styleboxes/Input box green.tres")
+@onready var red_stylebox = preload("res://Styleboxes/Input box red.tres")
 @onready var input_0: Panel = $InputHbox/Input0
 
 var inputs = []
@@ -73,8 +75,14 @@ func _on_confirm_pressed() -> void:
 		get_tree().change_scene_to_file("res://Screens/Oxygen Test.tscn")
 	if inputs == answer_key["To Body Parts"]:
 		get_tree().change_scene_to_file("res://Capillaries.tscn")
-	#else:
-		#get_node("Response").text = "Invalid code inputted."
+	else:
+		for i in input_nodes:
+			var label_node = i.get_node("Label")
+			if label_node.text != "": 
+				i.add_theme_stylebox_override("panel", red_stylebox)
+		await get_tree().create_timer(0.5).timeout
+		for i in input_nodes:
+			i.add_theme_stylebox_override("panel", normal_stylebox)
 	inputs.remove_at(0)
 
 func green_light():

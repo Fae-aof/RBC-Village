@@ -10,7 +10,7 @@ var oxy_spawn = 50
 
 func _ready() -> void:
 	animation.play("floating")
-	Trackers.oxygen = 100
+	Trackers.update_oxygen(100)
 	
 func _process(delta: float) -> void:
 	if level_done == true:
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	timer += delta
 	if timer > 1.3 and Trackers.oxygen > 0:
 		spawn_oxygen()
-		Trackers.oxygen -= 5
+		Trackers.update_oxygen(-5)
 		timer = 0
 	if level_done and timer > 2:
 		get_tree().change_scene_to_file("res://Locations/Left Atrium.tscn")

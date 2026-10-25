@@ -7,6 +7,8 @@ var xp = 0
 var oxygen = 0
 var dialogue_active = false
 
+var score = 0
+
 #clotting stuff
 var current_platelet
 var fibrin_counter = 0
@@ -18,6 +20,7 @@ var ongoing_quests = []
 var finished_quests = []
 
 signal oxygen_update
+signal score_update
 
 func update_location(new_location):
 	current_location = new_location
@@ -26,6 +29,10 @@ func update_location(new_location):
 func update_oxygen(added_oxygen: int):
 	oxygen += added_oxygen
 	emit_signal("oxygen_update")
+
+func update_score(added_score: int):
+	score += added_score
+	emit_signal("score_update")
 
 func add_quest(quest):
 	if quest.status == "incomplete":

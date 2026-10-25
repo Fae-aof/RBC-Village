@@ -46,10 +46,12 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("oxygen_particle") and !healthy:
 		set_sprite("Good")
 		healthy = true
+		Trackers.update_score(5)
 		area.queue_free()
 	if area.is_in_group("food_particle") and need_food:
 		set_sprite("Good")
 		healthy = true
+		Trackers.update_score(10)
 		area.queue_free()
 
 func set_sprite(state: String):

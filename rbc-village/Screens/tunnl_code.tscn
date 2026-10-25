@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="7_cq7go"]
 [ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="8_luoul"]
 [ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="9_luoul"]
+[ext_resource type="PackedScene" uid="uid://dl8u51yasl87n" path="res://Prefabs/UI/guide.tscn" id="10_fato6"]
 [ext_resource type="PackedScene" uid="uid://bkvntakggbf65" path="res://Prefabs/tunnel_button.tscn" id="13_l3lpo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
@@ -193,6 +194,10 @@ theme_override_colors/font_color = Color(0.44705883, 0.08235294, 0.101960786, 1)
 theme_override_fonts/font = ExtResource("9_luoul")
 theme_override_font_sizes/font_size = 44
 text = "Now Leaving: "
+
+[node name="Guide" parent="." unique_id=2090287992 instance=ExtResource("10_fato6")]
+offset_top = 1.0
+offset_bottom = 25.0
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

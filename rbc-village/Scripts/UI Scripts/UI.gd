@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var interact: Button = $Interact
 @onready var possess: Button = $Possess
-@onready var back: PanelContainer = $Back
 
 @onready var quest_ui: Control = $"Quest UI"
 @onready var oxygen_bar: Node = $"Oxygen Bar"
@@ -39,10 +38,14 @@ func toggle_quest(toggle : bool):
 func toggle_oxygen(toggle : bool):
 	if toggle:
 		oxygen_bar.show()
-		print("show bar")
 	else:
 		oxygen_bar.hide()
-		print("hide bar")
+
+func toggle_xp(toggle : bool):
+	if toggle:
+		xp.show()
+	else:
+		xp.hide()
 
 
 func _on_possess_pressed() -> void:

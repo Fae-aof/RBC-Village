@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://oyu8pru4chrj"]
 
-[ext_resource type="Script" uid="uid://b4qvp6pn5ky63" path="res://oxygen_gathering.gd" id="1_38vck"]
+[ext_resource type="Script" uid="uid://b4qvp6pn5ky63" path="res://capillaries.gd" id="1_38vck"]
 [ext_resource type="Texture2D" uid="uid://dv3dld0lv15iv" path="res://Milestone 3 Sprites/Capillary/IMG_1483.PNG" id="2_vavau"]
-[ext_resource type="Script" uid="uid://bda7c0yktua5x" path="res://cell_spawner.gd" id="3_w5cxu"]
+[ext_resource type="PackedScene" uid="uid://d0gmhbjoqqk3c" path="res://Prefabs/UI/ui_handler.tscn" id="2_w5cxu"]
+[ext_resource type="Script" uid="uid://bda7c0yktua5x" path="res://Scripts/Capillaries/cell_spawner.gd" id="3_w5cxu"]
 [ext_resource type="PackedScene" uid="uid://b6cmmw0540aux" path="res://Prefabs/Capillaries/food_particle.tscn" id="4_j0gqw"]
 [ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="5_d8877"]
 [ext_resource type="Script" uid="uid://c5h8yv3ixkd3l" path="res://Scripts/Capillaries/player_stream.gd" id="6_b80o1"]
@@ -15,6 +16,10 @@ size = Vector2(1325, 20)
 
 [node name="Capillaries" type="Node2D" unique_id=1647841242]
 script = ExtResource("1_38vck")
+
+[node name="UI Handler" parent="." unique_id=1771832294 instance=ExtResource("2_w5cxu")]
+quest_icon_on = false
+xp_on = false
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1593489084]
 repeat_size = Vector2(1280, 0)
@@ -77,5 +82,20 @@ script = ExtResource("6_b80o1")
 position = Vector2(0, 11.320792)
 rotation = 1.5707964
 scale = Vector2(0.24, 0.24)
+
+[node name="Score" type="Label" parent="." unique_id=1456433719]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1022.0
+offset_top = 37.0
+offset_right = 1151.0
+offset_bottom = 92.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 40
+text = "Score: 00"
+horizontal_alignment = 2
 
 [editable path="Player"]

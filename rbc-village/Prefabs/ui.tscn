@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="5_srcu5"]
 [ext_resource type="StyleBox" uid="uid://dp2nrm8r5mhn7" path="res://Styleboxes/Interaction Circle.tres" id="5_xd705"]
 [ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="5_ykg4x"]
+[ext_resource type="PackedScene" uid="uid://dl8u51yasl87n" path="res://Prefabs/UI/guide.tscn" id="8_oaevd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykg4x"]
 bg_color = Color(0.99999696, 0.50947034, 0.5521878, 1)
@@ -20,7 +21,7 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[node name="UI" type="CanvasLayer" unique_id=1593343590]
+[node name="UI" type="CanvasLayer" unique_id=1301996415]
 script = ExtResource("1_fyqef")
 
 [node name="Quest UI" parent="." unique_id=1679969922 instance=ExtResource("2_ykg4x")]
@@ -87,6 +88,7 @@ text = "XP: 00"
 horizontal_alignment = 2
 
 [node name="Location" type="Label" parent="." unique_id=1660503855]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -99,6 +101,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 40
 text = "Location: Bone Marrow"
+
+[node name="Guide" parent="." unique_id=2090287992 instance=ExtResource("8_oaevd")]
 
 [connection signal="pressed" from="Interact" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Possess" to="." method="_on_possess_pressed"]

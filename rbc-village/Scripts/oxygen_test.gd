@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var correct_stylebox = preload("res://Styleboxes/quiz correct.tres")
 @onready var incorrect_stylebox = preload("res://Styleboxes/quiz incorrect.tres")
 @onready var normal_stylebox = preload("res://Styleboxes/quiz blocks.tres")
+@onready var next_question: Button = $"Next Question"
 
 
 var question_list = [preload("res://Resources/Question/Question1.tres"), preload("res://Resources/Question/Question2.tres"), preload("res://Resources/Question/Question3.tres"), preload("res://Resources/Question/Question4.tres")]
@@ -49,16 +50,28 @@ func new_question():
 
 func _on_incorrect_pressed(button: Button) -> void:
 	button.add_theme_stylebox_override("normal", incorrect_stylebox)
+	button.add_theme_stylebox_override("disabled", incorrect_stylebox)
 	correct_button.add_theme_stylebox_override("normal", correct_stylebox)
-	await get_tree().create_timer(0.7).timeout
+	correct_button.add_theme_stylebox_override("disabled", correct_stylebox)
+	next_question.show()
 	for i in answer_buttons:
-		i.add_theme_stylebox_override("normal", normal_stylebox)
-	new_question()
+		i.disabled = true
+	await get_tree().create_timer(0.7).timeout
 	
 func _on_correct_pressed(button: Button) -> void:
 	button.add_theme_stylebox_override("normal", correct_stylebox)
+	button.add_theme_stylebox_override("disabled", correct_stylebox)
+	next_question.show()
 	Trackers.update_oxygen(25)
-	await get_tree().create_timer(0.7).timeout
 	for i in answer_buttons:
+		i.disabled = true
+	await get_tree().create_timer(0.7).timeout
+
+
+func _on_next_question_pressed() -> void:
+	for i in answer_buttons:
+		i.disabled = false
 		i.add_theme_stylebox_override("normal", normal_stylebox)
+		i.add_theme_stylebox_override("disabled", normal_stylebox)
 	new_question()
+	next_question.hide()

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqeq62lpbhfmu" path="res://Milestone 3 Sprites/UI/cancel icon.png" id="4_5f8u5"]
 
 [node name="Quest UI" type="Control" unique_id=1679969922]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 24.0

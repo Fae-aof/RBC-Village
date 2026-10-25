@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb3wkbk26ox2"
-path="res://.godot/imported/IMG_1489.PNG-540b7b99b43f9356239d36344d294078.ctex"
+uid="uid://caeqt1ykac5vs"
+path="res://.godot/imported/healthy2.png-3cd1e3a048f2bd4a6446cff38bebabf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Milestone 3 Sprites/Capillary/IMG_1489.PNG"
-dest_files=["res://.godot/imported/IMG_1489.PNG-540b7b99b43f9356239d36344d294078.ctex"]
+source_file="res://Milestone 3 Sprites/Capillary/healthy2.png"
+dest_files=["res://.godot/imported/healthy2.png-3cd1e3a048f2bd4a6446cff38bebabf1.ctex"]
 
 [params]
 

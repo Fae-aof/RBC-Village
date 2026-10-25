@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cgtakokrfj2g0"]
 
 [ext_resource type="Script" uid="uid://dhb8ih2el8h2j" path="res://Scripts/Capillaries/waste_particle.gd" id="1_8bt3l"]
-[ext_resource type="Texture2D" uid="uid://crrf1yuaemeig" path="res://Milestone 3 Sprites/Capillary/IMG_1481.PNG" id="2_8bt3l"]
+[ext_resource type="Texture2D" uid="uid://cti7frd5h7n0y" path="res://Milestone 3 Sprites/Capillary/image1.png" id="2_d0tto"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_74e76"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8bt3l")
+"texture": ExtResource("2_d0tto")
 }],
 "loop": 1,
 "name": &"particle_animation",

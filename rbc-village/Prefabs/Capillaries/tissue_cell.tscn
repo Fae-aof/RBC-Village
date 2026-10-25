@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://btaah0s334qrh"]
 
 [ext_resource type="Script" uid="uid://d2egmdlswfab7" path="res://Scripts/Capillaries/tissue_cell.gd" id="1_v0u0a"]
-[ext_resource type="Texture2D" uid="uid://tssu17estmmf" path="res://Milestone 3 Sprites/Capillary/IMG_1488.PNG" id="2_y5un3"]
-[ext_resource type="Texture2D" uid="uid://cb3wkbk26ox2" path="res://Milestone 3 Sprites/Capillary/IMG_1489.PNG" id="3_26jef"]
-[ext_resource type="Texture2D" uid="uid://sgo8nd4y1lmt" path="res://Milestone 3 Sprites/Capillary/IMG_1490.PNG" id="4_uomjf"]
-[ext_resource type="Texture2D" uid="uid://d3n4tv21h8utp" path="res://Milestone 3 Sprites/Capillary/image8.png" id="5_rglyd"]
-[ext_resource type="Texture2D" uid="uid://ope4615lali" path="res://Milestone 3 Sprites/Capillary/image5.png" id="6_xrl23"]
-[ext_resource type="Texture2D" uid="uid://bfm4rjkmi6kct" path="res://Milestone 3 Sprites/Capillary/image4.png" id="7_107y5"]
-[ext_resource type="Texture2D" uid="uid://cgdwfjqfspn8q" path="res://Milestone 3 Sprites/Capillary/image3.png" id="8_06gtd"]
-[ext_resource type="Texture2D" uid="uid://bai7l8x7esp3x" path="res://Milestone 3 Sprites/Capillary/image0.png" id="9_ari28"]
-[ext_resource type="Texture2D" uid="uid://bo8nj5uw6ggqu" path="res://Milestone 3 Sprites/Capillary/image9.png" id="10_vohsu"]
-[ext_resource type="Texture2D" uid="uid://7ryum7mx0dkc" path="res://Milestone 3 Sprites/Capillary/image8 (2).png" id="11_axrfv"]
-[ext_resource type="Texture2D" uid="uid://bqnhwlgnmidm3" path="res://Milestone 3 Sprites/Capillary/image7.png" id="12_7uqig"]
-[ext_resource type="Texture2D" uid="uid://bixl5o2ann7j2" path="res://Milestone 3 Sprites/Capillary/image6.png" id="13_gl0ca"]
+[ext_resource type="Texture2D" uid="uid://dx26j1wcxxu5m" path="res://Milestone 3 Sprites/Capillary/healthy3.png" id="3_v0u0a"]
+[ext_resource type="Texture2D" uid="uid://caeqt1ykac5vs" path="res://Milestone 3 Sprites/Capillary/healthy2.png" id="4_y5un3"]
+[ext_resource type="Texture2D" uid="uid://cjfs5ra82r8bs" path="res://Milestone 3 Sprites/Capillary/image8.png" id="5_rglyd"]
+[ext_resource type="Texture2D" uid="uid://bskvhjw7pgk2n" path="res://Milestone 3 Sprites/Capillary/image10.png" id="6_v0u0a"]
+[ext_resource type="Texture2D" uid="uid://btcrnfjehiedh" path="res://Milestone 3 Sprites/Capillary/image5.png" id="6_xrl23"]
+[ext_resource type="Texture2D" uid="uid://gcawl7pp8n0a" path="res://Milestone 3 Sprites/Capillary/image4.png" id="7_107y5"]
+[ext_resource type="Texture2D" uid="uid://b56kikd1rkwx5" path="res://Milestone 3 Sprites/Capillary/healthy4.png" id="8_06gtd"]
+[ext_resource type="Texture2D" uid="uid://c55oefl8mc3b" path="res://Milestone 3 Sprites/Capillary/healthy1.png" id="9_ari28"]
+[ext_resource type="Texture2D" uid="uid://dy7o75w0iwm3v" path="res://Milestone 3 Sprites/Capillary/image9.png" id="10_vohsu"]
+[ext_resource type="Texture2D" uid="uid://ngvvlugxvgmu" path="res://Milestone 3 Sprites/Capillary/image7.png" id="12_7uqig"]
+[ext_resource type="Texture2D" uid="uid://c8isn4cpbkshw" path="res://Milestone 3 Sprites/Capillary/image6.png" id="13_gl0ca"]
+[ext_resource type="Texture2D" uid="uid://dufymst41lpfr" path="res://Milestone 3 Sprites/Capillary/image3.png" id="13_y5un3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y5un3")
+"texture": ExtResource("8_06gtd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_26jef")
+"texture": ExtResource("3_v0u0a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_uomjf")
+"texture": ExtResource("4_y5un3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rglyd")
+"texture": ExtResource("9_ari28")
 }],
 "loop": 1,
 "name": &"Good",
@@ -35,16 +35,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_xrl23")
+"texture": ExtResource("6_v0u0a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_107y5")
+"texture": ExtResource("10_vohsu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_06gtd")
+"texture": ExtResource("5_rglyd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ari28")
+"texture": ExtResource("12_7uqig")
 }],
 "loop": 1,
 "name": &"Need_food",
@@ -52,16 +52,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_vohsu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_axrfv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_7uqig")
-}, {
-"duration": 1.0,
 "texture": ExtResource("13_gl0ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xrl23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_107y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_y5un3")
 }],
 "loop": 1,
 "name": &"Need_oxygen",

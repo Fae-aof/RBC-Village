@@ -1,6 +1,6 @@
 extends Node2D
 
-var tissue_scene = preload("res://Prefabs/tissue_cell.tscn")
+var tissue_scene = preload("res://Prefabs/Capillaries/tissue_cell.tscn")
 var timer = 0
 
 var list = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2]

@@ -34,7 +34,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xd705")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=967790559]
-position = Vector2(15, 12)
+position = Vector2(15, 16)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_apcmf")
 centered = false

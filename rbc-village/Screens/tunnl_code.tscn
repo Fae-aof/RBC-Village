@@ -2,17 +2,30 @@
 
 [ext_resource type="Script" uid="uid://dq4qucu3llwtj" path="res://Scripts/tunnl_code.gd" id="1_l3lpo"]
 [ext_resource type="StyleBox" uid="uid://b5ywhsod7imp0" path="res://Styleboxes/Background stylbox.tres" id="2_skb2f"]
+[ext_resource type="PackedScene" uid="uid://dutfgcfqnrjp" path="res://Prefabs/input.tscn" id="4_luoul"]
 [ext_resource type="Texture2D" uid="uid://dq2a4dv3jvjla" path="res://Milestone 3 Sprites/Tunnel Code/small arrow flipped.png" id="5_cq7go"]
 [ext_resource type="Texture2D" uid="uid://bffwcybgrdhvn" path="res://Milestone 3 Sprites/Tunnel Code/small arrow.png" id="6_luoul"]
 [ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="7_cq7go"]
 [ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="8_luoul"]
-[ext_resource type="PackedScene" uid="uid://c7i3dc0sj6bs8" path="res://Prefabs/inputed_code.tscn" id="12_1siru"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="9_luoul"]
 [ext_resource type="PackedScene" uid="uid://bkvntakggbf65" path="res://Prefabs/tunnel_button.tscn" id="13_l3lpo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(0.35686275, 0.0627451, 0.07058824, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3lpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luoul"]
+bg_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="TunnlCode" type="CanvasLayer" unique_id=1179230921]
 script = ExtResource("1_l3lpo")
@@ -40,14 +53,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("2_skb2f")
-
-[node name="Response" type="Label" parent="." unique_id=1721786249]
-visible = false
-offset_left = 111.0
-offset_top = 593.0
-offset_right = 659.0
-offset_bottom = 657.0
-theme_override_colors/font_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1240948336]
 anchors_preset = -1
@@ -113,7 +118,35 @@ size_flags_horizontal = 0
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="InputedCode" parent="." unique_id=1304875200 instance=ExtResource("12_1siru")]
+[node name="InputHbox" type="HBoxContainer" parent="." unique_id=1955833672]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -209.0
+offset_right = 580.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 23
+
+[node name="Input0" parent="InputHbox" unique_id=395526134 instance=ExtResource("4_luoul")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luoul")
+
+[node name="Input1" parent="InputHbox" unique_id=1572925327 instance=ExtResource("4_luoul")]
+layout_mode = 2
+
+[node name="Input2" parent="InputHbox" unique_id=1416211850 instance=ExtResource("4_luoul")]
+layout_mode = 2
+
+[node name="Input3" parent="InputHbox" unique_id=902926891 instance=ExtResource("4_luoul")]
+layout_mode = 2
+
+[node name="Input4" parent="InputHbox" unique_id=840281460 instance=ExtResource("4_luoul")]
+layout_mode = 2
 
 [node name="Back" type="Button" parent="." unique_id=633978310]
 offset_left = 1057.0
@@ -144,6 +177,22 @@ icon_alignment = 1
 [node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("7_cq7go")]
 
 [node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("8_luoul")]
+
+[node name="Starting Location" type="Label" parent="." unique_id=1700068037]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 69.0
+offset_top = 79.0
+offset_right = -333.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.44705883, 0.08235294, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("9_luoul")
+theme_override_font_sizes/font_size = 44
+text = "Now Leaving: "
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

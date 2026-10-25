@@ -8,7 +8,7 @@ bg_color = Color(1, 1, 1, 1)
 
 [node name="Button" type="Button" unique_id=521025266]
 custom_minimum_size = Vector2(180, 123)
-offset_right = 191.45454
+offset_right = 181.0
 offset_bottom = 123.0
 theme_override_colors/font_color = Color(0.34714013, 0.05472569, 0.07159575, 1)
 theme_override_colors/font_hover_color = Color(0.5058824, 0.09803922, 0.12156863, 1)
@@ -47,6 +47,6 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1948165937]
-position = Vector2(18, 9)
-scale = Vector2(0.7, 0.7)
+position = Vector2(7, 0)
+scale = Vector2(0.56164384, 0.56164384)
 centered = false

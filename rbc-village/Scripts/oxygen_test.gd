@@ -3,6 +3,11 @@ extends CanvasLayer
 @onready var qn_text: Label = $MarginContainer/Panel/Label
 @onready var grid: GridContainer = $MarginContainer/GridContainer
 
+@onready var correct_stylebox = preload("res://Styleboxes/quiz correct.tres")
+@onready var incorrect_stylebox = preload("res://Styleboxes/quiz incorrect.tres")
+@onready var normal_stylebox = preload("res://Styleboxes/quiz blocks.tres")
+
+
 var question_list = [preload("res://Resources/Question/Question1.tres"), preload("res://Resources/Question/Question2.tres"), preload("res://Resources/Question/Question3.tres"), preload("res://Resources/Question/Question4.tres")]
 
 var question_number = 0
@@ -12,6 +17,7 @@ var qn
 var answer
 
 var key_number
+var correct_button
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Trackers.current_location = "Lungs"
@@ -33,16 +39,26 @@ func new_question():
 		var answer_no = 0
 		for i in answer_buttons:
 			i.text = answer_list[answer_no]
-			i.connect("pressed", _on_incorrect_pressed)
+			i.connect("pressed", _on_incorrect_pressed.bind(i))
 			answer_no += 1
 		key_number = answer_list.find(answer)
-		answer_buttons[key_number].disconnect("pressed", _on_incorrect_pressed)
-		answer_buttons[key_number].connect("pressed", _on_correct_pressed)
+		correct_button = answer_buttons[key_number]
+		correct_button.disconnect("pressed", _on_incorrect_pressed)
+		correct_button.connect("pressed", _on_correct_pressed.bind(correct_button))
 		question_number += 1
 
-func _on_incorrect_pressed() -> void:
+func _on_incorrect_pressed(button: Button) -> void:
+	button.add_theme_stylebox_override("normal", incorrect_stylebox)
+	correct_button.add_theme_stylebox_override("normal", correct_stylebox)
+	await get_tree().create_timer(0.7).timeout
+	for i in answer_buttons:
+		i.add_theme_stylebox_override("normal", normal_stylebox)
 	new_question()
 	
-func _on_correct_pressed() -> void:
-	Trackers.oxygen += 25
+func _on_correct_pressed(button: Button) -> void:
+	button.add_theme_stylebox_override("normal", correct_stylebox)
+	Trackers.update_oxygen(25)
+	await get_tree().create_timer(0.7).timeout
+	for i in answer_buttons:
+		i.add_theme_stylebox_override("normal", normal_stylebox)
 	new_question()

@@ -111,34 +111,41 @@ animations = [{
 "loop": 1,
 "name": &"D",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bc6q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d61ma")
+}],
+"loop": 1,
+"name": &"dizzy",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxcha"]
-radius = 170.0
+radius = 201.72864
 
 [node name="NPC" type="Node2D" unique_id=1762507885]
 script = ExtResource("1_xxcha")
-metadata/DialogueRes = null
 
 [node name="Button" type="Button" parent="." unique_id=2141684566]
-offset_left = 16.0
-offset_top = 23.0
-offset_right = 136.0
-offset_bottom = 183.0
+offset_left = -55.0
+offset_top = -81.0
+offset_right = 65.0
+offset_bottom = 79.0
 flat = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=743713301]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ul7y6")
-animation = &"D"
-frame_progress = 0.88509214
-centered = false
+animation = &"dizzy"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=140631096]
+[node name="Area2D" type="Area2D" parent="." unique_id=140631096 groups=["npc"]]
 scale = Vector2(0.6, 0.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=117229040]
-position = Vector2(123.333336, 155)
 shape = SubResource("CircleShape2D_xxcha")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

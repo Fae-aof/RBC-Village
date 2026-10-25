@@ -1,29 +1,31 @@
 extends CanvasLayer
-@onready var label: Label = $Panel/Label
+
 @onready var interact: Button = $Interact
-#@onready var meter: Label = $oxygen
+@onready var possess: Button = $Possess
 @onready var back: PanelContainer = $Back
 
 @onready var quest_ui: Control = $"Quest UI"
 @onready var oxygen_bar: Node = $"Oxygen Bar"
 @onready var xp: Label = $XP
+@onready var location: Label = $Location
+
+@onready var possess_sprite = preload("res://Milestone 3 Sprites/UI/possess icon.png")
+@onready var enter_sprite = preload("res://Milestone 3 Sprites/UI/enter icon.png")
+
+var button_function = null
+
+signal possess_npc
 
 func _ready() -> void:
-	label.text = Trackers.current_location
+	location.text = Trackers.current_location
 
 func _process(delta: float) -> void:
 	xp.text = "XP: " + str(Trackers.xp)
 	#meter.text = "Oxgygen: " + str(Trackers.oxygen)
-func interaction_available(text: String):
-	interact.show()
-	interact.text = text
-	
-func interaction_unavailable():
-	interact.hide()
 	
 func _on_button_pressed() -> void:
-	if interact.text == "enter":
-		get_tree().change_scene_to_file("res://Screens/tunnl_code.tscn")
+	get_tree().change_scene_to_file("res://Screens/tunnl_code.tscn")
+
 
 func update_quest():
 	quest_ui.update_questlist()
@@ -41,3 +43,7 @@ func toggle_oxygen(toggle : bool):
 	else:
 		oxygen_bar.hide()
 		print("hide bar")
+
+
+func _on_possess_pressed() -> void:
+	emit_signal("possess_npc")

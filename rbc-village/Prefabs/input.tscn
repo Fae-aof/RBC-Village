@@ -1,26 +1,18 @@
 [gd_scene format=3 uid="uid://dutfgcfqnrjp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
-bg_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0.4, 0.4, 0.4, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[ext_resource type="StyleBox" uid="uid://cdc7bo5wayqyu" path="res://Styleboxes/Input box white.tres" id="1_pqfxr"]
 
 [node name="Input0" type="Panel" unique_id=395526134]
 custom_minimum_size = Vector2(173, 117)
 offset_right = 180.0
 offset_bottom = 136.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+theme_override_styles/panel = ExtResource("1_pqfxr")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1665236476]
-scale = Vector2(0.667, 0.667)
+position = Vector2(88, 56.999996)
+scale = Vector2(0.5616439, 0.56164384)
 centered = false
+offset = Vector2(-156.6829, -101.4878)
 
 [node name="Label" type="Label" parent="." unique_id=606319267]
 layout_mode = 1

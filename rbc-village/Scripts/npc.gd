@@ -5,7 +5,9 @@ extends Node2D
 @export var letter: String 
 
 var player_detected = false
+@export var possessable = true
 @export var task: Quest
+var letter_list = ["A", "B", "C", "D"]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,3 +36,11 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player_bottom"):
 		animation.material = null
 		player_detected = false
+		
+func just_released():
+	animation.play("dizzy")
+	possessable = false
+	await get_tree().create_timer(2.0).timeout
+	letter = letter_list.pick_random()
+	animation.play(letter)
+	possessable = true

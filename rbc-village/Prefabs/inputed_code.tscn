@@ -1,37 +1,10 @@
-[gd_scene format=3 uid="uid://c7i3dc0sj6bs8"]
+[gd_scene format=3 uid="uid://d26r21bcoldnd"]
 
 [ext_resource type="PackedScene" uid="uid://dutfgcfqnrjp" path="res://Prefabs/input.tscn" id="1_3cl21"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tuji"]
-bg_color = Color(0.97856885, 0.79127085, 0.7819173, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.51519644, 0.1354182, 0.14647433, 1)
-
 [node name="InputedCode" type="Node" unique_id=1045091493]
 
-[node name="Starting" type="Panel" parent="." unique_id=16291151]
-visible = false
-offset_left = 62.0
-offset_top = 422.0
-offset_right = 236.00002
-offset_bottom = 482.0
-scale = Vector2(1.3563218, 1)
-theme_override_styles/panel = SubResource("StyleBoxFlat_1tuji")
-
-[node name="StartingLocation" type="Label" parent="." unique_id=747803694]
-visible = false
-offset_left = 75.0
-offset_top = 430.0
-offset_right = 143.0
-offset_bottom = 470.0
-theme_override_colors/font_color = Color(0.39171818, 0.06688901, 0.08562915, 1)
-theme_override_font_sizes/font_size = 29
-text = "Start"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=446736604]
+[node name="HBox" type="HBoxContainer" parent="." unique_id=446736604]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -45,17 +18,17 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 23
 
-[node name="Input0" parent="HBoxContainer" unique_id=395526134 instance=ExtResource("1_3cl21")]
+[node name="Input0" parent="HBox" unique_id=395526134 instance=ExtResource("1_3cl21")]
 layout_mode = 2
 
-[node name="Input1" parent="HBoxContainer" unique_id=1102250674 instance=ExtResource("1_3cl21")]
+[node name="Input1" parent="HBox" unique_id=1102250674 instance=ExtResource("1_3cl21")]
 layout_mode = 2
 
-[node name="Input2" parent="HBoxContainer" unique_id=159077617 instance=ExtResource("1_3cl21")]
+[node name="Input2" parent="HBox" unique_id=159077617 instance=ExtResource("1_3cl21")]
 layout_mode = 2
 
-[node name="Input3" parent="HBoxContainer" unique_id=304601796 instance=ExtResource("1_3cl21")]
+[node name="Input3" parent="HBox" unique_id=304601796 instance=ExtResource("1_3cl21")]
 layout_mode = 2
 
-[node name="Input4" parent="HBoxContainer" unique_id=178166649 instance=ExtResource("1_3cl21")]
+[node name="Input4" parent="HBox" unique_id=178166649 instance=ExtResource("1_3cl21")]
 layout_mode = 2

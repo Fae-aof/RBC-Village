@@ -132,10 +132,10 @@ sprite_frames = SubResource("SpriteFrames_u1c27")
 animation = &"oxygenated"
 frame_progress = 0.6136084
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1282105250 groups=["player_whole"]]
+[node name="Full Area" type="Area2D" parent="." unique_id=1282105250 groups=["player_whole"]]
 position = Vector2(9, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=151985101]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Full Area" unique_id=151985101]
 shape = SubResource("CapsuleShape2D_b26j0")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=500156500 groups=["player_bottom"]]
@@ -151,8 +151,10 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_7hik5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=340672448]
-position = Vector2(2, 6)
 limit_left = 0
 limit_top = 0
 limit_right = 2146
 limit_bottom = 720
+
+[connection signal="area_entered" from="Full Area" to="." method="_on_full_area_area_entered"]
+[connection signal="area_exited" from="Full Area" to="." method="_on_full_area_area_exited"]

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://n2xyis25pci4"]
 
 [ext_resource type="Script" uid="uid://b8jwfsy2upu5v" path="res://Scripts/UI Scripts/UI.gd" id="1_fyqef"]
-[ext_resource type="StyleBox" uid="uid://dws8l63aarmsc" path="res://Styleboxes/Button Red.tres" id="2_cuqte"]
 [ext_resource type="PackedScene" uid="uid://u0e5ttq8utrb" path="res://Prefabs/UI/Quest Button.tscn" id="2_ykg4x"]
+[ext_resource type="Texture2D" uid="uid://bs1vtsjagmsm4" path="res://Milestone 3 Sprites/UI/enter icon.png" id="4_ykg4x"]
+[ext_resource type="Texture2D" uid="uid://djj2fs8klr36s" path="res://Milestone 3 Sprites/UI/possess icon.png" id="5_oaevd"]
 [ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="5_srcu5"]
 [ext_resource type="StyleBox" uid="uid://dp2nrm8r5mhn7" path="res://Styleboxes/Interaction Circle.tres" id="5_xd705"]
 [ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="5_ykg4x"]
@@ -24,30 +25,6 @@ script = ExtResource("1_fyqef")
 
 [node name="Quest UI" parent="." unique_id=1679969922 instance=ExtResource("2_ykg4x")]
 
-[node name="Panel" type="Panel" parent="." unique_id=1282620146]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -425.0
-offset_top = 16.0
-offset_right = -129.0
-offset_bottom = 90.0
-grow_horizontal = 0
-theme_override_styles/panel = ExtResource("2_cuqte")
-
-[node name="Label" type="Label" parent="Panel" unique_id=78543816]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.39215687, 0.06666667, 0.08627451, 1)
-theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Interact" type="Button" parent="." unique_id=1341733515]
 visible = false
 anchors_preset = 3
@@ -55,17 +32,40 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -209.0
-offset_top = -202.0
-offset_right = -53.0
-offset_bottom = -46.0
+offset_left = -278.0
+offset_top = -179.0
+offset_right = -108.0
+offset_bottom = -9.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.84, 0.84)
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = ExtResource("5_xd705")
 theme_override_styles/pressed = ExtResource("5_xd705")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ykg4x")
-text = "Interact"
+icon = ExtResource("4_ykg4x")
+flat = true
+
+[node name="Possess" type="Button" parent="." unique_id=710784078]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -281.0
+offset_right = -9.0
+offset_bottom = -111.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.84, 0.84)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("5_xd705")
+theme_override_styles/pressed = ExtResource("5_xd705")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ykg4x")
+icon = ExtResource("5_oaevd")
+flat = true
 
 [node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_ykg4x")]
 
@@ -75,10 +75,10 @@ text = "Interact"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -416.0
+offset_left = -258.0
 offset_top = 37.0
 offset_right = -129.0
-offset_bottom = 90.0
+offset_bottom = 92.0
 grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
@@ -86,4 +86,19 @@ theme_override_font_sizes/font_size = 40
 text = "XP: 00"
 horizontal_alignment = 2
 
+[node name="Location" type="Label" parent="." unique_id=1660503855]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -806.0
+offset_top = 37.0
+offset_right = -357.0
+offset_bottom = 92.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 40
+text = "Location: Bone Marrow"
+
 [connection signal="pressed" from="Interact" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Possess" to="." method="_on_possess_pressed"]

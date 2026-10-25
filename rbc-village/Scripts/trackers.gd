@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var location_label: Label = UI.get_node('Panel').get_node("Label")
+@onready var location_label: Label = UI.get_node('Location')
 
 var current_location = "Bone Marrow"
 var xp = 0
@@ -16,11 +16,16 @@ var list = preload("res://Resources/Quest/Level1_QuestList.tres")
 
 var ongoing_quests = []
 var finished_quests = []
-			
+
+signal oxygen_update
+
 func update_location(new_location):
 	current_location = new_location
 	location_label.text = new_location
-	
+
+func update_oxygen(added_oxygen: int):
+	oxygen += added_oxygen
+	emit_signal("oxygen_update")
 
 func add_quest(quest):
 	if quest.status == "incomplete":

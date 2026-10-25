@@ -19,8 +19,9 @@ location = "Right Atrium"
 position = Vector2(492, 417)
 
 [node name="NPC" parent="." unique_id=479781911 instance=ExtResource("4_222yp")]
-position = Vector2(907, 114)
+position = Vector2(912, 341)
 letter = "C"
+possessable = false
 task = ExtResource("5_od8b3")
 metadata/DialogueRes = ExtResource("5_mwkxa")
 

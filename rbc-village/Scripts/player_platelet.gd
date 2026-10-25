@@ -2,7 +2,6 @@ extends StaticBody2D
 
 @onready var pointer: Sprite2D = $Pointer
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
-@onready var camera: Camera2D = $Camera2D
 
 @export var speed: float = 6
 

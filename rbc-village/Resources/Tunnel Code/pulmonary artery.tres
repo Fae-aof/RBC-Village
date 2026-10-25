@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Option" format=3 uid="uid://c20o5g628e45w"]
 
 [ext_resource type="Script" uid="uid://cjg6q0njvsg8p" path="res://Scripts/tunnel_option.gd" id="1_2y082"]
-[ext_resource type="Texture2D" uid="uid://b7kp1v0vltmtr" path="res://Milestone 3 Sprites/Icons/Old/image8.png" id="2_i3anq"]
+[ext_resource type="Texture2D" uid="uid://cgggaorisgj81" path="res://Milestone 3 Sprites/Tunnel Code/image5.png" id="2_i3anq"]
 
 [resource]
 script = ExtResource("1_2y082")

@@ -68,6 +68,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ykg4x")
 icon = ExtResource("5_oaevd")
 flat = true
 
+[node name="Label" type="Label" parent="Possess" unique_id=581046733]
+layout_mode = 0
+offset_left = -344.0476
+offset_top = 47.619034
+offset_right = -7.0476074
+offset_bottom = 128.61903
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 28
+text = "You can possess certain red blood cells (WIP)"
+autowrap_mode = 2
+
 [node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_ykg4x")]
 
 [node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("5_srcu5")]

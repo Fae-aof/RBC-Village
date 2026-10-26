@@ -196,8 +196,10 @@ theme_override_font_sizes/font_size = 44
 text = "Now Leaving: "
 
 [node name="Guide" parent="." unique_id=2090287992 instance=ExtResource("10_fato6")]
-offset_top = 1.0
-offset_bottom = 25.0
+offset_left = 451.0
+offset_top = -93.0
+offset_right = 475.0
+offset_bottom = -69.0
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

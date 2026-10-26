@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var oxygen_bar: Node = $"Oxygen Bar"
 @onready var xp: Label = $XP
 @onready var location: Label = $Location
+@onready var guide: Control = $Guide
 
 @onready var possess_sprite = preload("res://Milestone 3 Sprites/UI/possess icon.png")
 @onready var enter_sprite = preload("res://Milestone 3 Sprites/UI/enter icon.png")
@@ -47,6 +48,11 @@ func toggle_xp(toggle : bool):
 	else:
 		xp.hide()
 
+func toggle_guide(toggle : bool):
+	if toggle:
+		guide.show()
+	else:
+		guide.hide()
 
 func _on_possess_pressed() -> void:
 	emit_signal("possess_npc")

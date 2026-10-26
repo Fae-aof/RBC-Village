@@ -3,6 +3,7 @@ extends Node
 
 func _ready() -> void:
 	Trackers.connect("oxygen_update", update_bar)
+	progress_bar.value = Trackers.oxygen
 
 func update_bar():
 	var tween = create_tween()

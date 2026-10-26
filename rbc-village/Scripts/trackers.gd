@@ -21,6 +21,7 @@ var finished_quests = []
 
 signal oxygen_update
 signal score_update
+signal oxygen_depleted
 
 func update_location(new_location):
 	current_location = new_location
@@ -28,6 +29,8 @@ func update_location(new_location):
 
 func update_oxygen(added_oxygen: int):
 	oxygen += added_oxygen
+	if oxygen <= 0:
+		emit_signal("oxygen_depleted")
 	emit_signal("oxygen_update")
 
 func update_score(added_score: int):

@@ -29,7 +29,7 @@ visible = false
 layout_mode = 0
 offset_left = 51.0
 offset_top = 140.0
-offset_right = 524.0
+offset_right = 543.0
 offset_bottom = 513.0
 texture = ExtResource("3_g1any")
 patch_margin_left = 42
@@ -71,8 +71,8 @@ Go up to NPCs and click on them to chat
 
 Answer Key for navigation:
 Right Atrium - Vena Cava, Right Atrium
-Lungs - Right Atirum, Tricuspid, Right Ventricle, Pulmonary Artery
-Body Parts - Lungs, Pulmonary Vein, Left Atrium, Bicuspid, Left Ventricle, Aorta"
+Lungs - Tricuspid, Right Ventricle, Pulmonary Artery
+Body Parts - Pulmonary Vein, Left Atrium, Bicuspid, Left Ventricle, Aorta"
 autowrap_mode = 2
 
 [node name="Cancel Button" type="Button" parent="." unique_id=157041548]
@@ -85,6 +85,18 @@ offset_bottom = 264.0
 scale = Vector2(0.6, 0.6)
 icon = ExtResource("4_8r31m")
 flat = true
+
+[node name="Label" type="Label" parent="." unique_id=839048049]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 121.0
+offset_right = 372.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 28
+text = "Click for guide"
 
 [connection signal="pressed" from="Guide Button" to="." method="_on_guide_button_pressed"]
 [connection signal="pressed" from="Cancel Button" to="." method="_on_cancel_button_pressed"]

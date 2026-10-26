@@ -71,9 +71,13 @@ func _on_confirm_pressed() -> void:
 		await get_tree().create_timer(0.4).timeout
 		Trackers.finish_quest(load("res://Resources/Quest/Right Atrium Quest.tres"))
 		get_tree().change_scene_to_file("res://Sections/Right Atrium.tscn")
-	if inputs == answer_key["To Lungs"]:
+	elif inputs == answer_key["To Lungs"]:
+		await green_light()
+		await get_tree().create_timer(0.4).timeout
 		get_tree().change_scene_to_file("res://Screens/Oxygen Test.tscn")
-	if inputs == answer_key["To Body Parts"]:
+	elif inputs == answer_key["To Body Parts"]:
+		await green_light()
+		await get_tree().create_timer(0.4).timeout
 		get_tree().change_scene_to_file("res://Capillaries.tscn")
 	else:
 		for i in input_nodes:

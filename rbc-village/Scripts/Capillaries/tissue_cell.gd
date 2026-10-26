@@ -11,20 +11,11 @@ var healthy = true
 var need_food = false
 var number = randi_range(0,3)
 
-#func _ready() -> void:
-	#var randomiser = randi_range(0, 10)
-	#sprite.animation = "Good"
-	#sprite.frame = number
-	#if randomiser > 8:
-		#healthy = false
-		#set_sprite("Need_oxygen")
-	#if randomiser == 5:
-		#need_food = true
-		#set_sprite("Need_food")
-		#var particle = waste_particle.instantiate()
-		#particle.position = Vector2(0, 0)
-		#add_child(particle)
-		
+var speed = -250
+
+func _ready() -> void:
+	Trackers.connect("oxygen_depleted", level_done)
+
 func on_creation(type: int):
 	sprite.animation = "Good"
 	sprite.frame = number
@@ -40,7 +31,7 @@ func on_creation(type: int):
 
 
 func _process(delta: float) -> void:
-	position.x -= 250 * delta
+	position.x += speed * delta
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("oxygen_particle") and !healthy:
@@ -57,3 +48,6 @@ func _on_area_entered(area: Area2D) -> void:
 func set_sprite(state: String):
 	sprite.animation = state
 	sprite.frame = number
+
+func level_done():
+	pass

@@ -5,17 +5,13 @@ extends CharacterBody2D
 @export var speed: float = 300.0
 
 var timer: float
-var level_done = false
 var oxy_spawn = 50
 
 func _ready() -> void:
 	animation.play("floating")
-	Trackers.update_oxygen(100)
+	Trackers.connect("oxygen_depleted", level_done)
 	
 func _process(delta: float) -> void:
-	if level_done == true:
-		var tween = create_tween()
-		tween.tween_property(self, "position", Vector2(1200, 0) + self.position, 2)
 	timer += delta
 	if timer > 1.3 and Trackers.oxygen > 0:
 		spawn_oxygen()
@@ -32,3 +28,8 @@ func spawn_oxygen():
 	var particle = particle_scene.instantiate()
 	particle.position = Vector2(x, y)
 	add_child(particle)
+
+func level_done():
+	pass
+	#var tween = create_tween()
+	#tween.tween_property(self, "position", Vector2(1200, 0) + self.position, 2)

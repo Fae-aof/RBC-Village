@@ -10,6 +10,7 @@ var scroll_speed = Vector2(-250,0)
 var score = 0
 
 func _ready() -> void:
+	Trackers.update_oxygen(100)
 	Trackers.connect("score_update", update_score)
 	Trackers.connect("oxygen_depleted", slow_down)
 

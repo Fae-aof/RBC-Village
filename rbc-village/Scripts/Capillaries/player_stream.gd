@@ -17,14 +17,12 @@ func _process(delta: float) -> void:
 		spawn_oxygen()
 		Trackers.update_oxygen(-5)
 		timer = 0
-	if level_done and timer > 2:
-		get_tree().change_scene_to_file("res://Locations/Left Atrium.tscn")
+	
 
 func spawn_oxygen():
 	var x = randf_range(-oxy_spawn, oxy_spawn)
 	var y = randf_range(-oxy_spawn, oxy_spawn)
-	print(x)
-	print(y)
+
 	var particle = particle_scene.instantiate()
 	particle.position = Vector2(x, y)
 	add_child(particle)

@@ -20,3 +20,13 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("bloodstream"):
+		var tween = create_tween()
+		tween.tween_property(self, "modulate:a", 0, 0.2)
+		var tweenb = create_tween()
+		tweenb.tween_property(self, "scale", Vector2(0.3, 0.3), 0.2)
+		await get_tree().create_timer(0.5).timeout
+		queue_free()

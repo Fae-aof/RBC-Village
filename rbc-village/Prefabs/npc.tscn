@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c5b3sf0esujeh" path="res://Milestone 2 Sprites/npc_animation/NPC D (4).png" id="15_8d7p2"]
 [ext_resource type="Texture2D" uid="uid://cmnwtqdbr5kx5" path="res://Milestone 2 Sprites/npc_animation/NPC D (3).png" id="16_swplc"]
 [ext_resource type="Texture2D" uid="uid://r1tgat16rfe2" path="res://Milestone 2 Sprites/npc_animation/NPC D (2).png" id="17_ujo46"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="18_ktunr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ul7y6"]
 animations = [{
@@ -147,6 +148,21 @@ scale = Vector2(0.6, 0.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=117229040]
 shape = SubResource("CircleShape2D_xxcha")
+
+[node name="Tap to Chat" type="Label" parent="." unique_id=613133279]
+visible = false
+offset_left = -65.0
+offset_top = -158.0
+offset_right = 75.0
+offset_bottom = -126.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("18_ktunr")
+theme_override_font_sizes/font_size = 26
+text = "Tap to Chat"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

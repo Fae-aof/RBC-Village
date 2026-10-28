@@ -3,6 +3,7 @@ extends Node2D
 @onready var button: Button = $Button
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @export var letter: String 
+@onready var tap_to_chat: Label = $"Tap to Chat"
 
 var player_detected = false
 @export var possessable = true
@@ -24,6 +25,7 @@ func _on_button_pressed() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_bottom"):
+		tap_to_chat.show()
 		var shader = preload("res://outline.gdshader")
 		var material = ShaderMaterial.new()
 		material.shader = shader
@@ -34,6 +36,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 #outline
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player_bottom"):
+		tap_to_chat.hide()
 		animation.material = null
 		player_detected = false
 		

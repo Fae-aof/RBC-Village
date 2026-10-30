@@ -30,7 +30,7 @@ func new_question():
 	print(question_number)
 	if question_number >= question_list.size():
 		$MarginContainer.hide()
-		get_tree().change_scene_to_file("res://Screens/tunnl_code.tscn")
+		UI.fade_to_black("res://Screens/tunnl_code.tscn")
 	else:
 		qn = question_list[question_number]
 		qn_text.text = qn.question

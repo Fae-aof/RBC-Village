@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="RBC Village"
-run/main_scene="uid://oyu8pru4chrj"
+run/main_scene="uid://c5j6jsyhtplyd"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

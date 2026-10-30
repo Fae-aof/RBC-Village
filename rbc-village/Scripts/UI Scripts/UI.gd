@@ -12,19 +12,24 @@ extends CanvasLayer
 @onready var possess_sprite = preload("res://Milestone 3 Sprites/UI/possess icon.png")
 @onready var enter_sprite = preload("res://Milestone 3 Sprites/UI/enter icon.png")
 
+@onready var black_fade: ColorRect = $BlackFade
+var fade_dur = 0.8
+
 var button_function = null
 
 signal possess_npc
 
 func _ready() -> void:
 	location.text = Trackers.current_location
+	
+	
 
 func _process(delta: float) -> void:
 	xp.text = "XP: " + str(Trackers.xp)
 	#meter.text = "Oxgygen: " + str(Trackers.oxygen)
 	
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Screens/tunnl_code.tscn")
+	fade_to_black("res://Screens/tunnl_code.tscn")
 
 
 func update_quest():
@@ -56,3 +61,14 @@ func toggle_guide(toggle : bool):
 
 func _on_possess_pressed() -> void:
 	emit_signal("possess_npc")
+
+func fade_to_black(scene : String):
+	black_fade.show()
+	var tween = create_tween()
+	tween.tween_property(black_fade, "color:a", 1, fade_dur)
+	await get_tree().create_timer(fade_dur).timeout
+	get_tree().change_scene_to_file(scene)
+	var tweenb = create_tween()
+	tweenb.tween_property(black_fade, "color:a", 0.0, fade_dur)
+	await get_tree().create_timer(fade_dur).timeout
+	black_fade.hide()

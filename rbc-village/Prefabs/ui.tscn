@@ -22,6 +22,7 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [node name="UI" type="CanvasLayer" unique_id=1301996415]
+layer = 2
 script = ExtResource("1_fyqef")
 
 [node name="Quest UI" parent="." unique_id=1679969922 instance=ExtResource("2_ykg4x")]
@@ -81,8 +82,6 @@ theme_override_font_sizes/font_size = 28
 text = "You can possess certain red blood cells (WIP)"
 autowrap_mode = 2
 
-[node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_ykg4x")]
-
 [node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("5_srcu5")]
 
 [node name="XP" type="Label" parent="." unique_id=1756119973]
@@ -116,6 +115,19 @@ theme_override_font_sizes/font_size = 40
 text = "Location: Bone Marrow"
 
 [node name="Guide" parent="." unique_id=2090287992 instance=ExtResource("8_oaevd")]
+visible = false
+
+[node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_ykg4x")]
+
+[node name="BlackFade" type="ColorRect" parent="." unique_id=1482716264]
+visible = false
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [connection signal="pressed" from="Interact" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Possess" to="." method="_on_possess_pressed"]

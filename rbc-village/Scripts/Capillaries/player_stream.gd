@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var particle_scene = preload("res://Prefabs/Capillaries/oxygen_particle.tscn")
 @export var speed: float = 300.0
 
+@export var next_scene = preload("res://Sections/Right Atrium.tscn")
 var timer: float
 var oxy_spawn = 50
 
@@ -28,6 +29,7 @@ func spawn_oxygen():
 	add_child(particle)
 
 func level_done():
-	pass
-	#var tween = create_tween()
-	#tween.tween_property(self, "position", Vector2(1200, 0) + self.position, 2)
+	await get_tree().create_timer(4).timeout
+	var tween = create_tween()
+	tween.tween_property(self, "position", Vector2(1200, 0) + self.position, 2)
+	UI.fade_to_black("res://Sections/Right Atrium.tscn")

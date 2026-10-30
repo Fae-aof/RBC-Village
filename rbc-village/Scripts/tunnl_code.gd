@@ -70,15 +70,15 @@ func _on_confirm_pressed() -> void:
 		await green_light()
 		await get_tree().create_timer(0.4).timeout
 		Trackers.finish_quest(load("res://Resources/Quest/Right Atrium Quest.tres"))
-		get_tree().change_scene_to_file("res://Sections/Right Atrium.tscn")
+		UI.fade_to_black("res://Sections/Right Atrium.tscn")
 	elif inputs == answer_key["To Lungs"]:
 		await green_light()
 		await get_tree().create_timer(0.4).timeout
-		get_tree().change_scene_to_file("res://Screens/Oxygen Test.tscn")
+		UI.fade_to_black("res://Screens/Oxygen Test.tscn")
 	elif inputs == answer_key["To Body Parts"]:
 		await green_light()
 		await get_tree().create_timer(0.4).timeout
-		get_tree().change_scene_to_file("res://Capillaries.tscn")
+		UI.fade_to_black("res://Capillaries.tscn")
 	else:
 		for i in input_nodes:
 			var label_node = i.get_node("Label")

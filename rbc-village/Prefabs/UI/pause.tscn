@@ -22,6 +22,7 @@ flat = true
 [node name="Pause Panel" type="Panel" parent="." unique_id=214448273]
 process_mode = 3
 visible = false
+z_index = 6
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

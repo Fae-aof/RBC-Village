@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://cgrvbojnbkxn1" path="res://Scripts/oxygen_test.gd" id="1_2qbyo"]
 [ext_resource type="StyleBox" uid="uid://b5ywhsod7imp0" path="res://Styleboxes/Background stylbox.tres" id="1_aoe3i"]
 [ext_resource type="StyleBox" uid="uid://cmqe6icawhlkj" path="res://Styleboxes/quiz blocks.tres" id="2_df7nh"]
-[ext_resource type="PackedScene" uid="uid://dju62vbdn2tj8" path="res://Prefabs/UI/oxygen_bar.tscn" id="4_f5ur1"]
-[ext_resource type="PackedScene" uid="uid://8vbkcclk7yrr" path="res://Prefabs/UI/pause.tscn" id="5_f5ur1"]
+[ext_resource type="PackedScene" uid="uid://d0gmhbjoqqk3c" path="res://Prefabs/UI/ui_handler.tscn" id="5_f5ur1"]
 [ext_resource type="Texture2D" uid="uid://bs1vtsjagmsm4" path="res://Milestone 3 Sprites/UI/enter icon.png" id="6_ks0lf"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=972989509]
@@ -111,10 +110,6 @@ theme_override_styles/disabled = ExtResource("2_df7nh")
 text = "Option A"
 autowrap_mode = 2
 
-[node name="Oxygen Bar" parent="." unique_id=432841508 instance=ExtResource("4_f5ur1")]
-
-[node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_f5ur1")]
-
 [node name="Next Question" type="Button" parent="." unique_id=1145719760]
 visible = false
 anchors_preset = -1
@@ -132,5 +127,7 @@ scale = Vector2(0.815, 0.815)
 size_flags_horizontal = 8
 icon = ExtResource("6_ks0lf")
 flat = true
+
+[node name="UI Handler" parent="." unique_id=1771832294 instance=ExtResource("5_f5ur1")]
 
 [connection signal="pressed" from="Next Question" to="." method="_on_next_question_pressed"]

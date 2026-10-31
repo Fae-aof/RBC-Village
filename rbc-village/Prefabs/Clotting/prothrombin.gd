@@ -20,6 +20,9 @@ func _process(delta: float) -> void:
 		if thrombokinase != [] and state == "prothrombin":
 			lifespan = randf_range(10, 15)
 			sprite.texture = thrombin_sprite
+			var tween = create_tween()
+			tween.tween_property(sprite, "scale", Vector2(1.3, 1.3), 0.2)
+			tween.tween_property(sprite, "scale", Vector2(0.85, 0.85), 0.3)
 			state = "thrombin"
 			for i in fibronogen:
 				i.enable_link()

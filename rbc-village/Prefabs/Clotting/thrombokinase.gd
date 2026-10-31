@@ -3,7 +3,7 @@ extends RigidBody2D
 var pos: Vector2
 var dir: float
 var rota: float
-var speed = 450
+var speed = 600
 var timer = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

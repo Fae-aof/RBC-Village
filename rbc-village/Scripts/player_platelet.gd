@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var pointer: Sprite2D = $Pointer
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
+var tween
 
 @export var speed: float = 6
 
@@ -29,12 +30,17 @@ func select():
 	selected = true
 	pointer.show()
 	animation.play("selected")
+	tween = create_tween().set_loops() 
+	tween.tween_property(animation, "scale", Vector2(0.55, 0.55), 0.45)
+	tween.tween_property(animation, "scale", Vector2(0.5, 0.5), 0.45)
 
 func unselect():
 	selected = false
 	pointer.hide()
 	animation.play("idle")
-
+	if tween != null:
+		tween.kill()
+	animation.scale = Vector2(0.5, 0.5)
 
 func _on_button_mouse_entered() -> void:
 	Trackers.mouse_on_platelet = true

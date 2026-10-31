@@ -149,7 +149,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 [node name="UI Handler" parent="." unique_id=1771832294 instance=ExtResource("2_w5cxu")]
 quest_icon_on = false
 xp_on = false
-guide_on = false
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1593489084]
 repeat_size = Vector2(1280, 0)

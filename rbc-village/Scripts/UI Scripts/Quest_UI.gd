@@ -6,6 +6,7 @@ extends Control
 @onready var v_box: VBoxContainer = $"Quest Panel/MarginContainer/VBoxContainer"
 @onready var ongoing: Label = $"Quest Panel/MarginContainer/VBoxContainer/Ongoing"
 @onready var finished: Label = $"Quest Panel/MarginContainer/VBoxContainer/Finished"
+@onready var alert: Sprite2D = $Alert
 
 func _ready() -> void:
 	update_questlist()
@@ -20,6 +21,7 @@ func update_questlist():
 		var ongoing_text = "\n".join(ongoing_array)
 		ongoing.text = ongoing_text
 		ongoing.show()
+		alert.show()
 	if Trackers.finished_quests == []:
 		finished.hide()
 	else:
@@ -31,6 +33,7 @@ func update_questlist():
 		finished.show()
 
 func _on_quest_button_pressed() -> void:
+	alert.hide()
 	quest_panel.show()
 	cancel_button.show()
 	quest_button.hide()

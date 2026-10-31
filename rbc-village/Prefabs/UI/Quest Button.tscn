@@ -4,14 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://qe7185chtgas" path="res://Milestone 3 Sprites/UI/Untitled_Artwork-3.png" id="2_0rho1"]
 [ext_resource type="Texture2D" uid="uid://d2l05am3f608q" path="res://Milestone 3 Sprites/UI/panel thin.png" id="3_5f8u5"]
 [ext_resource type="Texture2D" uid="uid://cqeq62lpbhfmu" path="res://Milestone 3 Sprites/UI/cancel icon.png" id="4_5f8u5"]
+[ext_resource type="Texture2D" uid="uid://bs1vtsjagmsm4" path="res://Milestone 3 Sprites/UI/enter icon.png" id="5_1b4cg"]
 
-[node name="Quest UI" type="Control" unique_id=1679969922]
-z_index = 1
+[node name="Quest UI" type="Control" unique_id=1207687155]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 24.0
-offset_bottom = 24.0
-size_flags_horizontal = 0
 script = ExtResource("1_xm528")
 
 [node name="Quest Button" type="Button" parent="." unique_id=585198392]
@@ -82,6 +79,13 @@ offset_bottom = 264.0
 scale = Vector2(0.6, 0.6)
 icon = ExtResource("4_5f8u5")
 flat = true
+
+[node name="Alert" type="Sprite2D" parent="." unique_id=583578050]
+visible = false
+modulate = Color(0.5568628, 1, 0.4, 1)
+position = Vector2(95, 127)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("5_1b4cg")
 
 [connection signal="pressed" from="Quest Button" to="." method="_on_quest_button_pressed"]
 [connection signal="pressed" from="Cancel Button" to="." method="_on_cancel_button_pressed"]

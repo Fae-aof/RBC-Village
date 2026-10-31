@@ -8,8 +8,8 @@ friction = 0.0
 absorbent = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb3tv"]
-radius = 16.0
-height = 48.0
+radius = 18.67764
+height = 57.58939
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
 radius = 117.00427
@@ -25,7 +25,7 @@ script = ExtResource("1_dvb61")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=474565546]
 position = Vector2(26, 1)
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.845, 0.845)
 texture = ExtResource("2_dvb61")
 offset = Vector2(-30.769232, -1.7094017)
 

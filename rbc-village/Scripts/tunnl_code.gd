@@ -15,7 +15,8 @@ var inputs = []
 var current_input = 0
 var answer_key = {"To Right Atrium" : ["Bone Marrow", "vena cava", "right atrium"],
 				  "To Lungs" : ["Right Atrium", "tricuspid", "right ventricle", "pulmonary artery"],
-				  "To Body Parts" : ["Lungs", "pulmonary vein", "left atrium", "bicuspid", "left ventricle", "aorta"]}
+				  "To Body Parts" : ["Lungs", "pulmonary vein", "left atrium", "bicuspid", "left ventricle", "aorta"],
+				  "To Right Atrium_leg" : ["Left Leg", "vena cava", "right atrium"]}
 
 var input_nodes = []
 
@@ -79,6 +80,10 @@ func _on_confirm_pressed() -> void:
 		await green_light()
 		await get_tree().create_timer(0.4).timeout
 		UI.fade_to_black("res://Capillaries.tscn")
+	elif inputs == answer_key["To Right Atrium_leg"]:
+		await green_light()
+		await get_tree().create_timer(0.4).timeout
+		UI.fade_to_black("res://Sections/Wound.tscn")
 	else:
 		for i in input_nodes:
 			var label_node = i.get_node("Label")

@@ -3,7 +3,6 @@ extends Node2D
 @onready var location_label: Label = UI.get_node('Location')
 
 var current_location = "Bone Marrow"
-var xp = 0
 var oxygen = 0
 var dialogue_active = false
 
@@ -43,6 +42,7 @@ func add_quest(quest):
 		quest.status = "ongoing"
 		ongoing_quests.append(quest)
 		UI.update_quest()
+		UI.quest_alert(true, quest.name)
 		
 	
 func finish_quest(quest):
@@ -50,5 +50,6 @@ func finish_quest(quest):
 		quest.status = "complete"
 		ongoing_quests.erase(quest)
 		finished_quests.append(quest)
-		xp += quest.reward
+		UI.update_xp(quest.reward)
 		UI.update_quest()
+		UI.quest_alert(false, quest.name)

@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bhjfi5x38jiva" path="res://Level 1_NPC3.dialogue" id="5_mwkxa"]
 [ext_resource type="Resource" uid="uid://dun78dp1ptuoo" path="res://Resources/Quest/Gather Oxygen Quest.tres" id="5_od8b3"]
 [ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="6_mwkxa"]
+[ext_resource type="PackedScene" uid="uid://d0gmhbjoqqk3c" path="res://Prefabs/UI/ui_handler.tscn" id="8_m4j2o"]
 
 [node name="RightAtrium" type="Node2D" unique_id=1064682882]
 y_sort_enabled = true
@@ -23,10 +24,12 @@ position = Vector2(912, 341)
 letter = "C"
 possessable = false
 task = ExtResource("5_od8b3")
-metadata/DialogueRes = ExtResource("5_mwkxa")
+dialogue = ExtResource("5_mwkxa")
 
 [node name="DialogueStateContext" type="Node" parent="NPC" unique_id=309652098 node_paths=PackedStringArray("target")]
 script = ExtResource("5_0lgyh")
 alias = "npc1_2"
 target = NodePath("..")
 metadata/_custom_type_script = "uid://cd3222nx3y3k5"
+
+[node name="UI Handler" parent="." unique_id=1771832294 instance=ExtResource("8_m4j2o")]

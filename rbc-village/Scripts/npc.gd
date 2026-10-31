@@ -9,7 +9,7 @@ var player_detected = false
 @export var possessable = true
 @export var task: Quest
 var letter_list = ["A", "B", "C", "D"]
-
+@export var dialogue: DialogueResource
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +21,7 @@ func start_quest():
 #dialogue and quest
 func _on_button_pressed() -> void:
 	if player_detected == true:
-		DialogueManager.show_dialogue_balloon(get_meta("DialogueRes"), "start")
+		DialogueManager.show_dialogue_balloon(dialogue, "start")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_bottom"):

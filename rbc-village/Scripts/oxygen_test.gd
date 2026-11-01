@@ -19,6 +19,9 @@ var answer
 
 var key_number
 var correct_button
+
+var next_qn_tween
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Trackers.current_location = "Lungs"
@@ -29,7 +32,6 @@ func _ready() -> void:
 func new_question():
 	print(question_number)
 	if question_number >= question_list.size():
-		$MarginContainer.hide()
 		UI.fade_to_black("res://Screens/tunnl_code.tscn")
 	else:
 		qn = question_list[question_number]
@@ -53,7 +55,8 @@ func _on_incorrect_pressed(button: Button) -> void:
 	button.add_theme_stylebox_override("disabled", incorrect_stylebox)
 	correct_button.add_theme_stylebox_override("normal", correct_stylebox)
 	correct_button.add_theme_stylebox_override("disabled", correct_stylebox)
-	next_question.show()
+	next_bobbing()
+	correct_button.disconnect("pressed", _on_correct_pressed)
 	for i in answer_buttons:
 		i.disabled = true
 	await get_tree().create_timer(0.7).timeout
@@ -61,8 +64,9 @@ func _on_incorrect_pressed(button: Button) -> void:
 func _on_correct_pressed(button: Button) -> void:
 	button.add_theme_stylebox_override("normal", correct_stylebox)
 	button.add_theme_stylebox_override("disabled", correct_stylebox)
-	next_question.show()
+	next_bobbing()
 	Trackers.update_oxygen(25)
+	correct_button.disconnect("pressed", _on_correct_pressed)
 	for i in answer_buttons:
 		i.disabled = true
 	await get_tree().create_timer(0.7).timeout
@@ -74,4 +78,15 @@ func _on_next_question_pressed() -> void:
 		i.add_theme_stylebox_override("normal", normal_stylebox)
 		i.add_theme_stylebox_override("disabled", normal_stylebox)
 	new_question()
+	next_hide()
+
+func next_bobbing():
+	next_question.show()
+	next_qn_tween = create_tween().set_loops() 
+	next_qn_tween.tween_property(next_question, "scale", Vector2(0.92, 0.92), 0.45)
+	next_qn_tween.tween_property(next_question, "scale", Vector2(0.76, 0.76), 0.45)
+
+func next_hide():
+	next_qn_tween.kill()
+	next_question.scale = Vector2(0.815, 0.815)
 	next_question.hide()

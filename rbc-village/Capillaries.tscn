@@ -253,6 +253,7 @@ vertical_alignment = 2
 autowrap_mode = 2
 
 [node name="Score" type="Label" parent="." unique_id=1456433719]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

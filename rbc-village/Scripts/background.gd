@@ -4,6 +4,8 @@ extends Node2D
 
 @export var location: String
 
+@export var special_enter : String
+
 func _ready() -> void:
 	Trackers.update_location(location)
 
@@ -13,4 +15,5 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	UI.special_enter = special_enter
 	UI.enter_bobbing()

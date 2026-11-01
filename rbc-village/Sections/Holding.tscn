@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://b2oedqe2ie76f" path="res://Level 1_NPC4.dialogue" id="4_ftnck"]
 
 [node name="Holding" type="Node2D" unique_id=481881417]
+y_sort_enabled = true
 
 [node name="Background" parent="." unique_id=154093167 instance=ExtResource("1_4mpxl")]
 position = Vector2(-1, 0)

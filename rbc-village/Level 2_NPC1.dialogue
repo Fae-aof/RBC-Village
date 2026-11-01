@@ -1,0 +1,5 @@
+~ start
+Borrel: Watch out!
+Borrel: There's a blood clot forming up ahead.
+$> npc2_1.start_quest()
+=> END

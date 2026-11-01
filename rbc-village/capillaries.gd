@@ -12,7 +12,6 @@ var score = 0
 func _ready() -> void:
 	Trackers.update_oxygen(10)
 	Trackers.connect("score_update", update_score)
-	Trackers.connect("oxygen_depleted", slow_down)
 
 
 func _process(delta: float) -> void:
@@ -27,8 +26,7 @@ func update_score():
 func set_score_text(value: int):
 	score_label.text = "Score: " + str(value)
 
-func slow_down():
-	panel_2.show()
-	#var tween = create_tween()
+#func slow_down():
+	##var tween = create_tween()
 	#tween.tween_property(self, "scroll_speed", Vector2.ZERO, 1)
 	

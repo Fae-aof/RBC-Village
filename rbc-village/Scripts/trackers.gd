@@ -29,7 +29,9 @@ func update_location(new_location):
 func update_oxygen(added_oxygen: int):
 	oxygen += added_oxygen
 	oxygen = clamp(oxygen, 0, 100)
-	if oxygen <= 0:
+	if oxygen == 100:
+		finish_quest(load("res://Resources/Quest/Gather Oxygen Quest.tres"))
+	elif oxygen <= 0:
 		emit_signal("oxygen_depleted")
 	emit_signal("oxygen_update")
 

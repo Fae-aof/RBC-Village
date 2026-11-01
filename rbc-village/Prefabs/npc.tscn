@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bdwng8u5y7lu0" path="res://Scripts/npc.gd" id="1_xxcha"]
 [ext_resource type="Texture2D" uid="uid://c6ucyc0d5lvds" path="res://Milestone 2 Sprites/npc_animation/NPC A (1).png" id="2_bc6q4"]
-[ext_resource type="Texture2D" uid="uid://c0j7chh1381d" path="res://Milestone 2 Sprites/npc_animation/NPC A (4).png" id="3_mcvl2"]
+[ext_resource type="Texture2D" uid="uid://dsi3ius3a7lkw" path="res://Milestone 3 Sprites/Cells/Untitled_Artwork (19).png" id="2_m46qm"]
 [ext_resource type="Texture2D" uid="uid://dy5bck3g31owd" path="res://Milestone 2 Sprites/npc_animation/NPC A (3).png" id="4_d61ma"]
-[ext_resource type="Texture2D" uid="uid://hv7xiucvbfwg" path="res://Milestone 2 Sprites/npc_animation/NPC A (2).png" id="5_slxoh"]
 [ext_resource type="Texture2D" uid="uid://bidl37i0tn0le" path="res://Milestone 2 Sprites/npc_animation/NPC B (4).png" id="6_hivs1"]
 [ext_resource type="Texture2D" uid="uid://c1310paejkwib" path="res://Milestone 2 Sprites/npc_animation/NPC B (3).png" id="7_faxwa"]
 [ext_resource type="Texture2D" uid="uid://ddqf5tbqly336" path="res://Milestone 2 Sprites/npc_animation/NPC B (2).png" id="8_bwlqr"]
@@ -22,23 +21,8 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_ul7y6"]
 animations = [{
 "frames": [{
-"duration": 0.91,
-"texture": ExtResource("2_bc6q4")
-}, {
-"duration": 0.6,
-"texture": ExtResource("3_mcvl2")
-}, {
-"duration": 0.6,
-"texture": ExtResource("4_d61ma")
-}, {
-"duration": 0.6,
-"texture": ExtResource("5_slxoh")
-}, {
-"duration": 0.6,
-"texture": ExtResource("4_d61ma")
-}, {
-"duration": 0.6,
-"texture": ExtResource("3_mcvl2")
+"duration": 1.0,
+"texture": ExtResource("2_m46qm")
 }],
 "loop": 1,
 "name": &"A",
@@ -141,7 +125,7 @@ flat = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=743713301]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ul7y6")
-animation = &"dizzy"
+animation = &"A"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=140631096 groups=["npc"]]
 scale = Vector2(0.6, 0.6)

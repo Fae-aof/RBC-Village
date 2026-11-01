@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @export var speed: float = 500.0
 
+@onready var ghost: Sprite2D = $Ghost
+
 var possessable_npc = []
 
 func _ready() -> void:
@@ -24,9 +26,11 @@ func get_input():
 	
 	if velocity.x < 0:
 		animation.flip_h = true
+		ghost.flip_h = true
 	elif velocity.x > 0:
 		animation.flip_h = false
-
+		ghost.flip_h = false
+		
 	if Trackers.oxygen >= 100 and animation.animation != "oxygenated":
 		animation.play("oxygenated")
 
@@ -50,10 +54,20 @@ func _on_full_area_area_exited(area: Area2D) -> void:
 			UI.get_node("Possess").hide()
 
 func possess_npc():
+	ghost.show()
+	var tween_gA = create_tween()
+	tween_gA.tween_property(ghost, "global_position", possessable_npc[0].global_position, 0.5)
+	var tween_gB = create_tween()
+	tween_gB.tween_property(ghost, "scale", Vector2(0.4,0.4), 0.25)
+	tween_gB.tween_property(ghost, "scale", Vector2(0.2,0.2), 0.25)
+	
+	await get_tree().create_timer(0.5).timeout
+
+	
 	var new_npc = npc_node.instantiate()
 	new_npc.global_position = global_position
 	get_parent().add_child(new_npc)
-	new_npc.just_released()
+	new_npc.just_released(1)
 	var new_player = player_node.instantiate()
 	new_player.global_position = possessable_npc[0].global_position
 	get_parent().add_child(new_player)

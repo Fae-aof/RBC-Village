@@ -120,7 +120,6 @@ theme_override_font_sizes/font_size = 40
 text = "Location: Bone Marrow"
 
 [node name="Guide" parent="." unique_id=2090287992 instance=ExtResource("8_oaevd")]
-visible = false
 
 [node name="Pause" parent="." unique_id=2032859399 instance=ExtResource("5_ykg4x")]
 

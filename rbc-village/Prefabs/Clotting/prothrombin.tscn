@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d24pu0pichidq" path="res://Prefabs/Clotting/prothrombin.gd" id="1_dvb61"]
 [ext_resource type="Texture2D" uid="uid://clrmholq5qyn" path="res://Milestone 3 Sprites/better clotting sprites/prothrombin.png" id="2_dvb61"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="3_40b1t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y8bb4"]
 friction = 0.0
@@ -41,6 +42,15 @@ collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Radius" unique_id=574479965]
 shape = SubResource("CircleShape2D_8vrlf")
+
+[node name="Label" type="Label" parent="." unique_id=1682925428]
+offset_left = -47.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -41.0
+theme_override_fonts/font = ExtResource("3_40b1t")
+text = "prothrombin"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Radius" to="." method="_on_radius_body_entered"]
 [connection signal="body_exited" from="Radius" to="." method="_on_radius_body_exited"]

@@ -8,8 +8,6 @@
 [ext_resource type="Resource" uid="uid://dun78dp1ptuoo" path="res://Resources/Quest/Gather Oxygen Quest.tres" id="5_od8b3"]
 [ext_resource type="PackedScene" uid="uid://bk1dqs0myu7mm" path="res://Prefabs/player.tscn" id="6_mwkxa"]
 [ext_resource type="PackedScene" uid="uid://d0gmhbjoqqk3c" path="res://Prefabs/UI/ui_handler.tscn" id="8_m4j2o"]
-[ext_resource type="Texture2D" uid="uid://bu8xsc1qwa7v5" path="res://Milestone 3 Sprites/Cells/NPCs dark.png" id="9_nvabq"]
-[ext_resource type="Texture2D" uid="uid://cv4nxbnkqslue" path="res://Milestone 3 Sprites/Cells/NPCs bright.png" id="10_6qgng"]
 
 [node name="RightAtrium" type="Node2D" unique_id=1064682882]
 y_sort_enabled = true
@@ -19,11 +17,9 @@ script = ExtResource("1_0lgyh")
 location = "Right Atrium"
 
 [node name="Player" parent="." unique_id=987400454 instance=ExtResource("6_mwkxa")]
-visible = false
 position = Vector2(492, 417)
 
 [node name="NPC" parent="." unique_id=479781911 instance=ExtResource("4_222yp")]
-visible = false
 position = Vector2(912, 341)
 letter = "A"
 possessable = false
@@ -37,13 +33,3 @@ target = NodePath("..")
 metadata/_custom_type_script = "uid://cd3222nx3y3k5"
 
 [node name="UI Handler" parent="." unique_id=1771832294 instance=ExtResource("8_m4j2o")]
-
-[node name="NpCsDark" type="Sprite2D" parent="." unique_id=914908089]
-position = Vector2(1342, 371)
-scale = Vector2(0.455, 0.455)
-texture = ExtResource("9_nvabq")
-
-[node name="NpCsBright" type="Sprite2D" parent="." unique_id=2065604302]
-position = Vector2(457, 388.00003)
-scale = Vector2(0.465, 0.465)
-texture = ExtResource("10_6qgng")

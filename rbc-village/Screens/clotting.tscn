@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="5_tn38g"]
 [ext_resource type="PackedScene" uid="uid://d0gmhbjoqqk3c" path="res://Prefabs/UI/ui_handler.tscn" id="6_fb3tv"]
 [ext_resource type="StyleBox" uid="uid://cxcqxavxvu8a1" path="res://Styleboxes/blank bar.tres" id="7_tn38g"]
+[ext_resource type="PackedScene" uid="uid://buse4mwb1sggx" path="res://Prefabs/Tut_Clotting.tscn" id="8_uojik"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cati5"]
 bounce = 0.5
@@ -156,5 +157,7 @@ step = 1.0
 
 [node name="UI Handler" parent="." unique_id=1771832294 instance=ExtResource("6_fb3tv")]
 oxygen_bar_on = false
-quest_icon_on = false
 xp_on = false
+guide_on = false
+
+[node name="Tutorial" parent="." unique_id=444241335 instance=ExtResource("8_uojik")]

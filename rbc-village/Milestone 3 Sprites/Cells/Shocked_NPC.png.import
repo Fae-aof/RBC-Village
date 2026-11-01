@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu8xsc1qwa7v5"
-path="res://.godot/imported/NPCs dark.png-166feb5b0fe63ef04b581e841f0600c0.ctex"
+uid="uid://dmtg8o6hmggpd"
+path="res://.godot/imported/Shocked_NPC.png-d3309fd948ca1ac9471ab08e7c974ea8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Milestone 3 Sprites/Cells/NPCs dark.png"
-dest_files=["res://.godot/imported/NPCs dark.png-166feb5b0fe63ef04b581e841f0600c0.ctex"]
+source_file="res://Milestone 3 Sprites/Cells/Shocked_NPC.png"
+dest_files=["res://.godot/imported/Shocked_NPC.png-d3309fd948ca1ac9471ab08e7c974ea8.ctex"]
 
 [params]
 

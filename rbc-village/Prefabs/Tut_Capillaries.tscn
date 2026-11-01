@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://culmucprhlak3"]
+
+[ext_resource type="Script" uid="uid://cmr7ld2pxxir8" path="res://Prefabs/tutorial.gd" id="1_hyj2f"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="2_ust6n"]
+[ext_resource type="StyleBox" uid="uid://cmqe6icawhlkj" path="res://Styleboxes/quiz blocks.tres" id="3_as4i5"]
+[ext_resource type="Texture2D" uid="uid://dufymst41lpfr" path="res://Milestone 3 Sprites/Capillary/image3.png" id="4_as4i5"]
+[ext_resource type="Texture2D" uid="uid://b7wejcgpirc7l" path="res://Milestone 3 Sprites/Capillary/image0.png" id="5_v7du0"]
+[ext_resource type="Texture2D" uid="uid://cti7frd5h7n0y" path="res://Milestone 3 Sprites/Capillary/image1.png" id="6_hsxdy"]
+[ext_resource type="Texture2D" uid="uid://qlmqw84qemm3" path="res://Milestone 3 Sprites/Capillary/image2.png" id="7_pky52"]
+[ext_resource type="Texture2D" uid="uid://ngvvlugxvgmu" path="res://Milestone 3 Sprites/Capillary/image7.png" id="8_ailcg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 0.9137255)
+
+[node name="Tutorial" type="CanvasLayer" unique_id=444241335]
+layer = 5
+script = ExtResource("1_hyj2f")
+
+[node name="Panel" type="Panel" parent="." unique_id=2121403092]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+
+[node name="Resume" type="Button" parent="." unique_id=1549158178]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 209.0
+offset_right = 215.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5568628, 0.15294118, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_ust6n")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_as4i5")
+text = "Done"
+
+[node name="Label" type="Label" parent="." unique_id=560881075]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.0
+offset_top = -258.0
+offset_right = 416.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Drag oxygen particles onto blue tissue cells
+
+
+Drag food particles onto yellow tissue cells
+
+
+Drag waste particles into the capillary you're in"
+horizontal_alignment = 1
+
+[node name="Image3" type="Sprite2D" parent="." unique_id=395633864]
+position = Vector2(870.00006, 202)
+scale = Vector2(0.5223004, 0.5223004)
+texture = ExtResource("4_as4i5")
+
+[node name="Image0" type="Sprite2D" parent="." unique_id=505614415]
+position = Vector2(446, 203)
+scale = Vector2(0.6666667, 0.6666667)
+texture = ExtResource("5_v7du0")
+
+[node name="Image1" type="Sprite2D" parent="." unique_id=1258753818]
+position = Vector2(464, 497.99997)
+scale = Vector2(0.6633334, 0.6633334)
+texture = ExtResource("6_hsxdy")
+
+[node name="Image2" type="Sprite2D" parent="." unique_id=2077331228]
+position = Vector2(459, 348.00003)
+scale = Vector2(0.68666667, 0.68666667)
+texture = ExtResource("7_pky52")
+
+[node name="Image7" type="Sprite2D" parent="." unique_id=1594478551]
+position = Vector2(837, 348)
+scale = Vector2(0.5176057, 0.5176057)
+texture = ExtResource("8_ailcg")
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]

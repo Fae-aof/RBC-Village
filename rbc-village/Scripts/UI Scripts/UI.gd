@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var enter: Button = $Interact
 var enter_bob_tween
-var special_enter = null
+var special_enter = ""
 @onready var possess: Button = $Possess
 
 @onready var quest_ui: Control = $"Quest UI"
@@ -33,10 +33,11 @@ func _process(delta: float) -> void:
 	#meter.text = "Oxgygen: " + str(Trackers.oxygen)
 	
 func _on_button_pressed() -> void:
-	if special_enter != null:
+	if special_enter != "":
 		fade_to_black(special_enter)
 		special_enter = null
 	else:
+		print("faded")
 		fade_to_black("res://Screens/tunnl_code.tscn")
 
 func enter_bobbing():

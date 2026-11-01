@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv4nxbnkqslue"
-path="res://.godot/imported/NPCs bright.png-75e1dc9c28cfed87c0003751bb0cd2c9.ctex"
+uid="uid://cjowlrqn678rd"
+path="res://.godot/imported/Peaceful_NPC.png-e9a9bd94a1bee0198b782affea820b34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Milestone 3 Sprites/Cells/NPCs bright.png"
-dest_files=["res://.godot/imported/NPCs bright.png-75e1dc9c28cfed87c0003751bb0cd2c9.ctex"]
+source_file="res://Milestone 3 Sprites/Cells/Peaceful_NPC.png"
+dest_files=["res://.godot/imported/Peaceful_NPC.png-e9a9bd94a1bee0198b782affea820b34.ctex"]
 
 [params]
 

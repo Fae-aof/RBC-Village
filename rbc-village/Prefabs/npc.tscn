@@ -1,97 +1,60 @@
 [gd_scene format=3 uid="uid://c0cqsmkj42df8"]
 
 [ext_resource type="Script" uid="uid://bdwng8u5y7lu0" path="res://Scripts/npc.gd" id="1_xxcha"]
-[ext_resource type="Texture2D" uid="uid://c6ucyc0d5lvds" path="res://Milestone 2 Sprites/npc_animation/NPC A (1).png" id="2_bc6q4"]
-[ext_resource type="Texture2D" uid="uid://dsi3ius3a7lkw" path="res://Milestone 3 Sprites/Cells/Untitled_Artwork (19).png" id="2_m46qm"]
-[ext_resource type="Texture2D" uid="uid://dy5bck3g31owd" path="res://Milestone 2 Sprites/npc_animation/NPC A (3).png" id="4_d61ma"]
-[ext_resource type="Texture2D" uid="uid://bidl37i0tn0le" path="res://Milestone 2 Sprites/npc_animation/NPC B (4).png" id="6_hivs1"]
-[ext_resource type="Texture2D" uid="uid://c1310paejkwib" path="res://Milestone 2 Sprites/npc_animation/NPC B (3).png" id="7_faxwa"]
-[ext_resource type="Texture2D" uid="uid://ddqf5tbqly336" path="res://Milestone 2 Sprites/npc_animation/NPC B (2).png" id="8_bwlqr"]
-[ext_resource type="Texture2D" uid="uid://bytxp3cg1pwpd" path="res://Milestone 2 Sprites/npc_animation/NPC B (1).png" id="9_wnt0c"]
-[ext_resource type="Texture2D" uid="uid://b4l6sbtp78t06" path="res://Milestone 2 Sprites/npc_animation/NPC C (4).png" id="10_ur8k0"]
-[ext_resource type="Texture2D" uid="uid://d2lpqgwmsmoqd" path="res://Milestone 2 Sprites/npc_animation/NPC C (3).png" id="11_hlw2c"]
-[ext_resource type="Texture2D" uid="uid://tt1ucut4dlvr" path="res://Milestone 2 Sprites/npc_animation/NPC C (2).png" id="12_pvame"]
-[ext_resource type="Texture2D" uid="uid://ra5isksg2akk" path="res://Milestone 2 Sprites/npc_animation/NPC C (1).png" id="13_1mjj1"]
-[ext_resource type="Texture2D" uid="uid://dr7gggfbsskep" path="res://Milestone 2 Sprites/npc_animation/NPC D (1).png" id="14_bb20n"]
-[ext_resource type="Texture2D" uid="uid://c5b3sf0esujeh" path="res://Milestone 2 Sprites/npc_animation/NPC D (4).png" id="15_8d7p2"]
-[ext_resource type="Texture2D" uid="uid://cmnwtqdbr5kx5" path="res://Milestone 2 Sprites/npc_animation/NPC D (3).png" id="16_swplc"]
-[ext_resource type="Texture2D" uid="uid://r1tgat16rfe2" path="res://Milestone 2 Sprites/npc_animation/NPC D (2).png" id="17_ujo46"]
+[ext_resource type="Texture2D" uid="uid://cxb15g74clly" path="res://Milestone 3 Sprites/Cells/Happy_NPC.png" id="2_phvsa"]
+[ext_resource type="Texture2D" uid="uid://bl4ncp35et2nh" path="res://Milestone 3 Sprites/Cells/Happy_NPC_Dark.png" id="3_8yhpb"]
+[ext_resource type="Texture2D" uid="uid://dmtg8o6hmggpd" path="res://Milestone 3 Sprites/Cells/Shocked_NPC.png" id="4_qj4yi"]
+[ext_resource type="Texture2D" uid="uid://c4wnkwe0ckbd4" path="res://Milestone 3 Sprites/Cells/Shocked_NPC_Dark.png" id="5_ymbq2"]
+[ext_resource type="Texture2D" uid="uid://cjowlrqn678rd" path="res://Milestone 3 Sprites/Cells/Peaceful_NPC.png" id="6_eic0c"]
+[ext_resource type="Texture2D" uid="uid://ci2s6matieo2g" path="res://Milestone 3 Sprites/Cells/Peaceful_NPC_Dark.png" id="7_m46qm"]
+[ext_resource type="Texture2D" uid="uid://du04xpqr15vii" path="res://Milestone 3 Sprites/Cells/Confused_NPC.png" id="8_ktunr"]
+[ext_resource type="Texture2D" uid="uid://djolyuo07l7c" path="res://Milestone 3 Sprites/Cells/Confused_NPC_Dark.png" id="9_1qlhg"]
+[ext_resource type="Texture2D" uid="uid://b6gwgi2tmlli1" path="res://Milestone 3 Sprites/Cells/Dizzy_NPC.png" id="10_whts2"]
+[ext_resource type="Texture2D" uid="uid://ckcs1tw6bi1m5" path="res://Milestone 3 Sprites/Cells/Dizzy_NPC_Dark.png" id="11_bvqdt"]
+[ext_resource type="Texture2D" uid="uid://bdfqab425on6f" path="res://Milestone 3 Sprites/Cells/shadow.png" id="12_8yhpb"]
 [ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="18_ktunr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ul7y6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_m46qm")
+"texture": ExtResource("2_phvsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8yhpb")
 }],
 "loop": 1,
 "name": &"A",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.81,
-"texture": ExtResource("6_hivs1")
+"duration": 1.0,
+"texture": ExtResource("4_qj4yi")
 }, {
-"duration": 0.6,
-"texture": ExtResource("7_faxwa")
-}, {
-"duration": 0.6,
-"texture": ExtResource("8_bwlqr")
-}, {
-"duration": 0.6,
-"texture": ExtResource("9_wnt0c")
-}, {
-"duration": 0.6,
-"texture": ExtResource("8_bwlqr")
-}, {
-"duration": 0.6,
-"texture": ExtResource("7_faxwa")
+"duration": 1.0,
+"texture": ExtResource("5_ymbq2")
 }],
 "loop": 1,
 "name": &"B",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.81,
-"texture": ExtResource("10_ur8k0")
+"duration": 1.0,
+"texture": ExtResource("6_eic0c")
 }, {
-"duration": 0.6,
-"texture": ExtResource("11_hlw2c")
-}, {
-"duration": 0.6,
-"texture": ExtResource("12_pvame")
-}, {
-"duration": 0.6,
-"texture": ExtResource("13_1mjj1")
-}, {
-"duration": 0.6,
-"texture": ExtResource("12_pvame")
-}, {
-"duration": 0.6,
-"texture": ExtResource("11_hlw2c")
+"duration": 1.0,
+"texture": ExtResource("7_m46qm")
 }],
 "loop": 1,
 "name": &"C",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.81,
-"texture": ExtResource("14_bb20n")
+"duration": 1.0,
+"texture": ExtResource("8_ktunr")
 }, {
-"duration": 0.6,
-"texture": ExtResource("15_8d7p2")
-}, {
-"duration": 0.6,
-"texture": ExtResource("16_swplc")
-}, {
-"duration": 0.6,
-"texture": ExtResource("17_ujo46")
-}, {
-"duration": 0.6,
-"texture": ExtResource("16_swplc")
-}, {
-"duration": 0.6,
-"texture": ExtResource("15_8d7p2")
+"duration": 1.0,
+"texture": ExtResource("9_1qlhg")
 }],
 "loop": 1,
 "name": &"D",
@@ -99,10 +62,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bc6q4")
+"texture": ExtResource("10_whts2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_d61ma")
+"texture": ExtResource("11_bvqdt")
 }],
 "loop": 1,
 "name": &"dizzy",
@@ -122,10 +85,18 @@ offset_right = 65.0
 offset_bottom = 79.0
 flat = true
 
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1456152374]
+modulate = Color(1, 1, 1, 0.62352943)
+position = Vector2(0, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_8yhpb")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=743713301]
-scale = Vector2(0.4, 0.4)
+position = Vector2(0, 70)
+scale = Vector2(0.435, 0.435)
 sprite_frames = SubResource("SpriteFrames_ul7y6")
 animation = &"A"
+offset = Vector2(0, -160.91994)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=140631096 groups=["npc"]]
 scale = Vector2(0.6, 0.6)

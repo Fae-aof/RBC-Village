@@ -5,6 +5,7 @@ var thrombokinase_here = false
 var thrombokinase = []
 var fibronogen = []
 var calcium_here = false
+@onready var label: Label = $Label
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var thrombin_sprite = preload("res://Milestone 3 Sprites/better clotting sprites/thrombin.png")
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 			tween.tween_property(sprite, "scale", Vector2(1.3, 1.3), 0.2)
 			tween.tween_property(sprite, "scale", Vector2(0.85, 0.85), 0.3)
 			state = "thrombin"
+			label.text = state
 			for i in fibronogen:
 				i.enable_link()
 			fibronogen = []

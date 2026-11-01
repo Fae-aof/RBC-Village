@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://buse4mwb1sggx"]
+
+[ext_resource type="Script" uid="uid://cmr7ld2pxxir8" path="res://Prefabs/tutorial.gd" id="1_s23a5"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="2_fqdvk"]
+[ext_resource type="StyleBox" uid="uid://cmqe6icawhlkj" path="res://Styleboxes/quiz blocks.tres" id="3_1udgt"]
+[ext_resource type="Texture2D" uid="uid://02wrpxb8v3m0" path="res://Milestone 3 Sprites/better clotting sprites/thrombokinase.png" id="4_x445q"]
+[ext_resource type="Texture2D" uid="uid://clrmholq5qyn" path="res://Milestone 3 Sprites/better clotting sprites/prothrombin.png" id="5_gnnfm"]
+[ext_resource type="Texture2D" uid="uid://dwgjjrk2scx2d" path="res://Milestone 3 Sprites/Clotting/IMG_1543.PNG" id="6_s23a5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.06798273, 0.06798274, 0.067982696, 0.9137255)
+
+[node name="Tutorial" type="CanvasLayer" unique_id=444241335]
+layer = 5
+script = ExtResource("1_s23a5")
+
+[node name="Panel" type="Panel" parent="." unique_id=2121403092]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+
+[node name="Resume" type="Button" parent="." unique_id=1549158178]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 209.0
+offset_right = 215.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5568628, 0.15294118, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_fqdvk")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_1udgt")
+text = "Done"
+
+[node name="Label" type="Label" parent="." unique_id=560881075]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.0
+offset_top = -265.0
+offset_right = 416.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Goal: Make fibrin
+Press Space to shoot thrombokinase
+
+Push prothrombin into calcium ions 
+to turn them into thrombin
+
+Thrombin will change fibronogen into fibrin
+
+Game ends here, thanks for playing!"
+horizontal_alignment = 1
+
+[node name="Thrombokinase" type="Sprite2D" parent="." unique_id=1112585018]
+position = Vector2(973, 171)
+texture = ExtResource("4_x445q")
+
+[node name="Prothrombin" type="Sprite2D" parent="." unique_id=2125781174]
+position = Vector2(983, 285)
+texture = ExtResource("5_gnnfm")
+
+[node name="Img1543" type="Sprite2D" parent="." unique_id=1502557395]
+position = Vector2(1114, 284)
+scale = Vector2(0.628, 0.628)
+texture = ExtResource("6_s23a5")
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]

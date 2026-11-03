@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://02wrpxb8v3m0" path="res://Milestone 3 Sprites/better clotting sprites/thrombokinase.png" id="4_x445q"]
 [ext_resource type="Texture2D" uid="uid://clrmholq5qyn" path="res://Milestone 3 Sprites/better clotting sprites/prothrombin.png" id="5_gnnfm"]
 [ext_resource type="Texture2D" uid="uid://dwgjjrk2scx2d" path="res://Milestone 3 Sprites/Clotting/IMG_1543.PNG" id="6_s23a5"]
+[ext_resource type="Texture2D" uid="uid://56o7a6q678ji" path="res://Milestone 3 Sprites/better clotting sprites/platelet unactive.png" id="7_gnnfm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(0.06798273, 0.06798274, 0.067982696, 0.9137255)
@@ -61,21 +62,27 @@ Push prothrombin into calcium ions
 to turn them into thrombin
 
 Thrombin will change fibronogen into fibrin
+Click other platelets to change positions
 
 Game ends here, thanks for playing!"
 horizontal_alignment = 1
 
 [node name="Thrombokinase" type="Sprite2D" parent="." unique_id=1112585018]
-position = Vector2(973, 171)
+position = Vector2(973, 138)
 texture = ExtResource("4_x445q")
 
 [node name="Prothrombin" type="Sprite2D" parent="." unique_id=2125781174]
-position = Vector2(983, 285)
+position = Vector2(975, 260)
 texture = ExtResource("5_gnnfm")
 
 [node name="Img1543" type="Sprite2D" parent="." unique_id=1502557395]
-position = Vector2(1114, 284)
+position = Vector2(1100, 262.00003)
 scale = Vector2(0.628, 0.628)
 texture = ExtResource("6_s23a5")
+
+[node name="PlateletUnactive" type="Sprite2D" parent="." unique_id=901423832]
+position = Vector2(1063.25, 414.25)
+scale = Vector2(0.5342857, 0.5342857)
+texture = ExtResource("7_gnnfm")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
